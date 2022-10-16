@@ -1,4 +1,4 @@
-# Proyek Mob App Kelompok 1 "Mob App"
+# Proyek Mob App Kelompok 1 "Lindungi Lansia"
 
 - **2000831** Nyoman Ari Satyadharma | ari.satyadharma@upi.edu
 - **2003452** Aryo Bagas Pamungkas | aryop@upi.edu
