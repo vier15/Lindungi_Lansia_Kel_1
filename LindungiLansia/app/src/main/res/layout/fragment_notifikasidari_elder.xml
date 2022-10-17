@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout4"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="@color/background"
+    tools:context=".NotifikasidariElderFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="138dp"
+        android:layout_height="59dp"
+        android:backgroundTint="@color/soft_red"
+        android:fontFamily="@font/sen"
+        android:shadowColor="@color/primary_blue"
+        android:text="Bantu"
+        android:textAllCaps="false"
+        android:textColor="@color/background"
+        android:textColorHighlight="@color/primary_blue"
+        android:textColorHint="@color/soft_red"
+        android:textSize="16sp"
+        app:cornerRadius="@android:dimen/app_icon_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.208"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.888"
+        tools:fontFamily="@font/sen" />
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="138dp"
+        android:layout_height="59dp"
+        android:backgroundTint="@color/background"
+        android:fontFamily="@font/sen"
+        android:shadowColor="@color/primary_blue"
+        android:text="Tidak Bisa Bantu"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/primary_blue"
+        android:textColorHighlight="@color/primary_blue"
+        android:textColorHint="@color/background"
+        android:textSize="14sp"
+        app:cornerRadius="@android:dimen/app_icon_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.791"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.888" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="104dp"
+        android:fontFamily="@font/sen"
+        android:text="30"
+        android:textColor="@color/soft_red"
+        android:textSize="60sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="66dp"
+        android:layout_height="53dp"
+        android:scrollbarSize="20dp"
+        android:src="@drawable/ic_round_alarm_24"
+        android:tint="@color/soft_red"
+        tools:layout_editor_absoluteX="213dp"
+        tools:layout_editor_absoluteY="111dp" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/default_profile"
+        tools:layout_editor_absoluteX="105dp"
+        tools:layout_editor_absoluteY="206dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="297dp"
+        android:layout_height="121dp"
+        android:fontFamily="@font/sen"
+        android:text="Himejima Ujang     BUTUH BANTUAN"
+        android:textAlignment="center"
+        android:textColor="@color/soft_red"
+        android:textSize="34sp"
+        tools:layout_editor_absoluteX="57dp"
+        tools:layout_editor_absoluteY="424dp" />
+
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="102dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.003"
+        tools:layout_editor_absoluteX="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

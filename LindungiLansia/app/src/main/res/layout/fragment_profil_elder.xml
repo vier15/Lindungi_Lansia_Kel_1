@@ -237,7 +237,7 @@
             <Button
                 android:id="@+id/btnRekamMedisElder"
                 android:layout_width="113dp"
-                android:layout_height="39dp"
+                android:layout_height="48dp"
                 android:background="#00FFFFFF"
                 android:text="Rekam Medis"
                 android:textColor="@color/black"
