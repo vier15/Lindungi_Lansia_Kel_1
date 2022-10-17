@@ -11,6 +11,7 @@
         android:id="@+id/alert_Atribut"
         android:layout_width="288dp"
         android:layout_height="101dp"
+        android:fontFamily="@font/sen"
         android:text="BANTUAN DIBATALKAN"
         android:textAlignment="center"
         android:textColor="@color/background"

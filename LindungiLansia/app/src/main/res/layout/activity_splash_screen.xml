@@ -24,7 +24,7 @@
         android:id="@+id/splashScreenTitle"
         android:layout_width="265dp"
         android:layout_height="46dp"
-        android:fontFamily="sans-serif"
+        android:fontFamily="@font/quicksand"
         android:text="Lindungi Lansia"
         android:textAlignment="center"
         android:textColor="@color/pure_white"

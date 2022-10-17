@@ -19,6 +19,32 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
 
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="112dp"
+            android:layout_height="118dp"
+            android:src="@drawable/default_profile"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.413" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="@font/sen"
+            android:text="Himejima Ujang"
+            android:textAlignment="center"
+            android:textColor="@color/pure_white"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView6"
+            app:layout_constraintVertical_bias="0.34" />
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
             android:layout_width="266dp"
@@ -32,49 +58,101 @@
             app:layout_constraintVertical_bias="1.0">
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/chip4"
-                android:layout_width="231dp"
+                android:id="@+id/rekamMedis"
+                android:layout_width="0dp"
                 android:layout_height="67dp"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="28dp" />
+                app:chipBackgroundColor="@color/shadow_blue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.457"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="16dp" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_person_outline_24"
+                android:tint="@color/primary_blue"
+                app:layout_constraintBottom_toBottomOf="@+id/tvRekamMedis"
+                app:layout_constraintTop_toTopOf="@+id/tvRekamMedis"
+                tools:layout_editor_absoluteX="32dp" />
+
+            <TextView
+                android:id="@+id/tvRekamMedis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sen_bold"
+                android:text="Rekam Medis"
+                android:textColor="@color/primary_blue"
+                app:layout_constraintBottom_toTopOf="@+id/linkCaregiver"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/rekamMedis" />
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/chip8"
-                android:layout_width="231dp"
+                android:id="@+id/linkCaregiver"
+                android:layout_width="0dp"
                 android:layout_height="67dp"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="94dp" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="83dp" />
+
+            <TextView
+                android:id="@+id/tvLinkCaregiver"
+                android:layout_width="133dp"
+                android:layout_height="31dp"
+                android:fontFamily="@font/sen"
+                android:text="Sambungkan dengan Caregiver"
+                android:textColor="@color/jet_black"
+                app:layout_constraintBottom_toBottomOf="@+id/linkCaregiver"
+                app:layout_constraintEnd_toEndOf="@+id/linkCaregiver"
+                app:layout_constraintHorizontal_bias="0.661"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rekamMedis"
+                app:layout_constraintVertical_bias="0.514" />
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/chip9"
-                android:layout_width="231dp"
+                android:id="@+id/jadwalObat"
+                android:layout_width="0dp"
                 android:layout_height="67dp"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="160dp" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.457"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="149dp" />
+
+            <TextView
+                android:id="@+id/tvJadwalObat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sen"
+                android:text="Rekam Medis"
+                android:textColor="@color/jet_black"
+                app:layout_constraintEnd_toEndOf="@+id/jadwalObat"
+                app:layout_constraintStart_toStartOf="@+id/jadwalObat"
+                tools:layout_editor_absoluteY="174dp" />
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_outline_add_reaction_24"
+                android:tint="@color/primary_blue"
+                app:layout_constraintBottom_toBottomOf="@+id/tvLinkCaregiver"
+                app:layout_constraintTop_toTopOf="@+id/tvLinkCaregiver"
+                tools:layout_editor_absoluteX="32dp" />
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_outline_calendar_month_24"
+                android:tint="@color/primary_blue"
+                app:layout_constraintBottom_toBottomOf="@+id/tvJadwalObat"
+                app:layout_constraintTop_toTopOf="@+id/tvJadwalObat"
+                tools:layout_editor_absoluteX="32dp" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Himejima Ujang"
-            android:textAlignment="center"
-            android:textColor="@color/pure_white"
-            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.502"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView"
-            app:layout_constraintVertical_bias="0.21" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher_foreground"
-            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
