@@ -10,14 +10,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="40dp"
+        android:padding="20dp"
         tools:context=".ProfilElderFragment">
 
         <ImageView
             android:id="@+id/imgProfilElder"
             android:layout_width="112dp"
             android:layout_height="118dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="48dp"
             android:src="@drawable/default_profile"
             app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
             app:layout_constraintEnd_toEndOf="parent"
@@ -26,10 +26,11 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvNamaElder"
+            android:id="@+id/tvSuntingNamaElder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
+            android:fontFamily="sans-serif"
             android:text="Nama Elder"
             android:textAlignment="center"
             android:textColor="@color/pure_white"
@@ -39,12 +40,75 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imgProfilElder" />
 
+        <Button
+            android:id="@+id/btnKembaliProfilElder"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="107dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:drawableStart="@drawable/ic_round_arrow_back_ios_24_pure_white"
+            android:fontFamily="sans-serif"
+            android:text="Kembali"
+            android:textAllCaps="false"
+            android:textColor="@color/pure_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.013"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/layoutDataProfilElder"
+            android:id="@+id/grpBtnProfilElder"
+            android:layout_width="300dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="36dp"
+            android:background="@color/background"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSuntingNamaElder">
+
+            <View
+                android:id="@+id/grpBtnDivider"
+                android:layout_width="1dp"
+                android:layout_height="54dp"
+                android:background="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btnSuntingProfilElder"
+                android:layout_width="131dp"
+                android:layout_height="48dp"
+                android:background="#00FFFFFF"
+                android:text="Sunting Profil"
+                android:textColor="@color/jet_black"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/grpBtnDivider"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btnRekamMedisElder"
+                android:layout_width="113dp"
+                android:layout_height="48dp"
+                android:background="#00FFFFFF"
+                android:text="Rekam Medis"
+                android:textColor="@color/jet_black"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/grpBtnDivider"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutDataProfilElderEdit"
             android:layout_width="339dp"
             android:layout_height="482dp"
             android:layout_marginTop="40dp"
-            android:background="@color/pure_white"
             android:background="@drawable/rounded_corner"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.381"
@@ -70,7 +134,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Laki-laki"
-                android:textColor="@color/black"
+                android:textColor="@color/jet_black"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.22"
@@ -81,10 +145,10 @@
                 android:id="@+id/tvTglLahirProfilElder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="15 Agustus 1888"
-                android:textColor="@color/black"
-                android:textSize="16sp"
                 android:layout_marginTop="8dp"
+                android:text="15 Agustus 1888"
+                android:textColor="@color/jet_black"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.288"
                 app:layout_constraintStart_toStartOf="parent"
@@ -109,10 +173,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:src="@drawable/ic_round_mail_outline_24"
-                app:layout_constraintEnd_toStartOf="@+id/tvEmailProfilElder"
+                app:layout_constraintEnd_toStartOf="@+id/tvEmailProfilElderEdit"
                 app:layout_constraintHorizontal_bias="0.764"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvJudulEmailProfilElder" />
+                app:layout_constraintTop_toBottomOf="@+id/tvJudulEmailProfilElder"
+                app:tint="@color/primary_blue" />
 
             <TextView
                 android:id="@+id/tvJudulEmailProfilElder"
@@ -128,12 +193,12 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tvEmailProfilElder"
+                android:id="@+id/tvEmailProfilElderEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="contoh@email.com"
-                android:textColor="@color/black"
+                android:textColor="@color/jet_black"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.33"
@@ -159,7 +224,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="081234567890"
-                android:textColor="@color/black"
+                android:textColor="@color/jet_black"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.288"
@@ -170,12 +235,13 @@
                 android:id="@+id/imgTeleponProfilElder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_round_phone_24"
                 android:layout_marginTop="8dp"
+                android:src="@drawable/ic_round_phone_24"
                 app:layout_constraintEnd_toStartOf="@+id/tvTeleponProfilElder"
                 app:layout_constraintHorizontal_bias="0.761"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvJudulTeleponProfilElder" />
+                app:layout_constraintTop_toBottomOf="@+id/tvJudulTeleponProfilElder"
+                app:tint="@color/primary_blue" />
 
             <ImageView
                 android:id="@+id/imageView15"
@@ -186,7 +252,8 @@
                 app:layout_constraintEnd_toStartOf="@+id/tvTglLahirProfilElder"
                 app:layout_constraintHorizontal_bias="0.842"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvJudulTglLahirProfilElder" />
+                app:layout_constraintTop_toBottomOf="@+id/tvJudulTglLahirProfilElder"
+                app:tint="@color/primary_blue" />
 
             <ImageView
                 android:id="@+id/imageView13"
@@ -197,56 +264,94 @@
                 app:layout_constraintHorizontal_bias="0.875"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvJudulJKProfilElder"
-                app:srcCompat="@drawable/ic_baseline_male_24" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                app:srcCompat="@drawable/ic_baseline_male_24"
+                app:tint="@color/primary_blue" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/grpBtnProfilElder"
-            android:layout_width="300dp"
-            android:layout_height="56dp"
-            android:layout_marginTop="36dp"
-            android:background="@color/pure_white"
-            android:background="@drawable/rounded_corner"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvNamaElder">
-
-            <View
-                android:id="@+id/grpBtnDivider"
-                android:layout_width="1dp"
-                android:layout_height="54dp"
-                android:background="@color/black"
-                app:layout_constraintBottom_toBottomOf="parent"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout4"
+                android:layout_width="263dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:background="#002C6BA6"
+                android:padding="0dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/tvJKProdilElder">
 
-            <Button
-                android:id="@+id/btnSuntingProfilElder"
-                android:layout_width="131dp"
-                android:layout_height="33dp"
-                android:background="#00FFFFFF"
-                android:text="Sunting Profil"
-                android:textColor="@color/black"
-                android:textSize="10sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/grpBtnDivider"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                <View
+                    android:id="@+id/divider4"
+                    android:layout_width="1dp"
+                    android:layout_height="45dp"
+                    android:background="@color/jet_black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.32"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.4" />
 
-            <Button
-                android:id="@+id/btnRekamMedisElder"
-                android:layout_width="113dp"
-                android:layout_height="48dp"
-                android:background="#00FFFFFF"
+                <TextView
+                    android:id="@+id/tvTinggiProfilElder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_round_straighten_24_primary_blue"
+                    android:text="166 cm"
+                    android:textColor="@color/jet_black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/divider4"
+                    app:layout_constraintHorizontal_bias="0.627"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/divider5"
+                    android:layout_width="1dp"
+                    android:layout_height="38dp"
+                    android:background="@color/jet_black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/divider4"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvBeratProfilElder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_round_monitor_weight_24_primary_blue"
+                    android:text="57 kg"
+                    android:textColor="@color/jet_black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/divider5"
+                    app:layout_constraintStart_toEndOf="@+id/divider4"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvGolDarahProfilElder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_round_bloodtype_24_primary_blue"
+                    android:text="A+"
+                    android:textColor="@color/jet_black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/divider5"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tvRekamMedisProfilElder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
                 android:text="Rekam Medis"
-                android:textColor="@color/black"
-                android:textSize="10sp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:textColor="@color/primary_blue"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/grpBtnDivider"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout4" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
