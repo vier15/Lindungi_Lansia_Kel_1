@@ -26,7 +26,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvNamaElder"
+            android:id="@+id/tvSuntingNamaElder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -44,28 +44,17 @@
             android:id="@+id/btnKembaliProfilElder"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="107dp"
-            android:layout_height="47dp"
-            android:layout_marginTop="4dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:drawableStart="@drawable/ic_round_arrow_back_ios_24_pure_white"
             android:fontFamily="sans-serif"
             android:text="Kembali"
             android:textAllCaps="false"
+            android:textColor="@color/pure_white"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.003"
+            app:layout_constraintHorizontal_bias="0.013"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/imgKembaliProfilElder"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:tint="@color/pure_white"
-            app:layout_constraintBottom_toBottomOf="@+id/btnKembaliProfilElder"
-            app:layout_constraintEnd_toEndOf="@+id/btnKembaliProfilElder"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/btnKembaliProfilElder"
-            app:layout_constraintTop_toTopOf="@+id/btnKembaliProfilElder"
-            app:layout_constraintVertical_bias="0.521"
-            app:srcCompat="@drawable/ic_round_arrow_back_ios_new_24" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/grpBtnProfilElder"
@@ -73,10 +62,10 @@
             android:layout_height="56dp"
             android:layout_marginTop="36dp"
             android:background="@color/background"
-            android:background="@drawable/rounded_corner"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvNamaElder">
+            app:layout_constraintTop_toBottomOf="@+id/tvSuntingNamaElder">
 
             <View
                 android:id="@+id/grpBtnDivider"
@@ -91,7 +80,7 @@
             <Button
                 android:id="@+id/btnSuntingProfilElder"
                 android:layout_width="131dp"
-                android:layout_height="33dp"
+                android:layout_height="48dp"
                 android:background="#00FFFFFF"
                 android:text="Sunting Profil"
                 android:textColor="@color/jet_black"
@@ -104,7 +93,7 @@
             <Button
                 android:id="@+id/btnRekamMedisElder"
                 android:layout_width="113dp"
-                android:layout_height="39dp"
+                android:layout_height="48dp"
                 android:background="#00FFFFFF"
                 android:text="Rekam Medis"
                 android:textColor="@color/jet_black"
@@ -116,11 +105,10 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/layoutDataProfilElder"
+            android:id="@+id/layoutDataProfilElderEdit"
             android:layout_width="339dp"
             android:layout_height="482dp"
             android:layout_marginTop="40dp"
-            android:background="@color/background"
             android:background="@drawable/rounded_corner"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.381"
@@ -185,11 +173,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:src="@drawable/ic_round_mail_outline_24"
-                android:tint="@color/primary_blue"
-                app:layout_constraintEnd_toStartOf="@+id/tvEmailProfilElder"
+                app:layout_constraintEnd_toStartOf="@+id/tvEmailProfilElderEdit"
                 app:layout_constraintHorizontal_bias="0.764"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvJudulEmailProfilElder" />
+                app:layout_constraintTop_toBottomOf="@+id/tvJudulEmailProfilElder"
+                app:tint="@color/primary_blue" />
 
             <TextView
                 android:id="@+id/tvJudulEmailProfilElder"
@@ -205,7 +193,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tvEmailProfilElder"
+                android:id="@+id/tvEmailProfilElderEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -249,11 +237,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:src="@drawable/ic_round_phone_24"
-                android:tint="@color/primary_blue"
                 app:layout_constraintEnd_toStartOf="@+id/tvTeleponProfilElder"
                 app:layout_constraintHorizontal_bias="0.761"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvJudulTeleponProfilElder" />
+                app:layout_constraintTop_toBottomOf="@+id/tvJudulTeleponProfilElder"
+                app:tint="@color/primary_blue" />
 
             <ImageView
                 android:id="@+id/imageView15"
@@ -261,23 +249,23 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:src="@drawable/ic_round_cake_24"
-                android:tint="@color/primary_blue"
                 app:layout_constraintEnd_toStartOf="@+id/tvTglLahirProfilElder"
                 app:layout_constraintHorizontal_bias="0.842"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvJudulTglLahirProfilElder" />
+                app:layout_constraintTop_toBottomOf="@+id/tvJudulTglLahirProfilElder"
+                app:tint="@color/primary_blue" />
 
             <ImageView
                 android:id="@+id/imageView13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:tint="@color/primary_blue"
                 app:layout_constraintEnd_toStartOf="@+id/tvJKProdilElder"
                 app:layout_constraintHorizontal_bias="0.875"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvJudulJKProfilElder"
-                app:srcCompat="@drawable/ic_baseline_male_24" />
+                app:srcCompat="@drawable/ic_baseline_male_24"
+                app:tint="@color/primary_blue" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout4"
@@ -306,6 +294,7 @@
                     android:id="@+id/tvTinggiProfilElder"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_round_straighten_24_primary_blue"
                     android:text="166 cm"
                     android:textColor="@color/jet_black"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -318,7 +307,7 @@
                     android:id="@+id/divider5"
                     android:layout_width="1dp"
                     android:layout_height="38dp"
-                    android:background="?android:attr/listDivider"
+                    android:background="@color/jet_black"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/divider4"
@@ -328,6 +317,7 @@
                     android:id="@+id/tvBeratProfilElder"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_round_monitor_weight_24_primary_blue"
                     android:text="57 kg"
                     android:textColor="@color/jet_black"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -339,6 +329,7 @@
                     android:id="@+id/tvGolDarahProfilElder"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_round_bloodtype_24_primary_blue"
                     android:text="A+"
                     android:textColor="@color/jet_black"
                     app:layout_constraintBottom_toBottomOf="parent"
