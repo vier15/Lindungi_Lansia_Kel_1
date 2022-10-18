@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@color/background"
     tools:context=".LoginFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -13,6 +13,7 @@
         android:id="@+id/etEmailLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_round_mail_outline_24"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -22,12 +23,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.272" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnBatalLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="7dp"
+        android:backgroundTint="@color/pure_white"
+        android:drawableEnd="@drawable/ic_round_logout_24_soft_red"
         android:text="Batal"
+        android:textAllCaps="false"
         android:textColor="@color/soft_red"
         app:layout_constraintBottom_toTopOf="@+id/btnDaftarLogin"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,12 +40,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnMasukLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="7dp"
+        android:backgroundTint="@color/pure_white"
+        android:drawableEnd="@drawable/ic_round_login_24_primary_blue"
         android:text="Masuk"
+        android:textAllCaps="false"
         android:textColor="@color/primary_blue"
         app:layout_constraintBottom_toTopOf="@+id/btnDaftarLogin"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,6 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Email"
+        android:textColor="@color/primary_blue"
         app:layout_constraintBottom_toTopOf="@+id/etEmailLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.265"
@@ -62,12 +70,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.994" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnDaftarLogin"
         android:layout_width="258dp"
         android:layout_height="46dp"
         android:background="#2C6BA6"
         android:text="Daftar"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -79,20 +88,22 @@
         android:id="@+id/etPassLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_round_key_24"
         android:ems="10"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.399" />
+        app:layout_constraintVertical_bias="0.397" />
 
     <TextView
         android:id="@+id/tvPassLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Kata Sandi"
+        android:textColor="@color/primary_blue"
         app:layout_constraintBottom_toTopOf="@+id/etPassLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.287"
