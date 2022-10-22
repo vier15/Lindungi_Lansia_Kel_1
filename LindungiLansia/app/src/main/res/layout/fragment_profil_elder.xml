@@ -276,7 +276,8 @@
                 android:padding="0dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvJKProdilElder">
+                app:layout_constraintTop_toBottomOf="@+id/tvJKProdilElder"
+                tools:background="@color/pure_white">
 
                 <View
                     android:id="@+id/divider4"

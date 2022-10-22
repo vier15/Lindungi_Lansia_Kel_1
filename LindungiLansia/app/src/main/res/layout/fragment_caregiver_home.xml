@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".CaregiverHomeFragment">
+
+        <ImageView
+            android:id="@+id/ivCaregiverHomeProfile"
+            android:layout_width="149dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="48dp"
+            android:src="@drawable/default_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvCaregiverHomeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Nibutani Maman"
+            android:textColor="@color/primary_blue"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivCaregiverHomeProfile" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clListElderCaregiverHome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:background="@color/primary_blue"
+            android:padding="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvCaregiverHomeName"
+            tools:layout_editor_absoluteX="0dp">
+
+            <ImageView
+                android:id="@+id/ivSwipeListElderCaregiverHome"
+                android:layout_width="38dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_round_keyboard_arrow_up_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clElderCaregiverHome"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounder_corner_25"
+                android:padding="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivSwipeListElderCaregiverHome">
+
+                <ImageView
+                    android:id="@+id/imgTeleponElderCaregiverHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/ic_round_phone_24"
+                    app:layout_constraintStart_toEndOf="@+id/ivElderCaregiverHome"
+                    app:layout_constraintTop_toBottomOf="@+id/tvElderNameCaregiverHome"
+                    app:tint="@color/primary_blue" />
+
+                <ImageView
+                    android:id="@+id/ivElderCaregiverHome"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/default_profile"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvElderNameCaregiverHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="Himajime Ujang"
+                    android:textColor="@color/primary_blue"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivElderCaregiverHome"
+                    app:layout_constraintStart_toEndOf="@+id/ivElderCaregiverHome"
+                    app:layout_constraintTop_toTopOf="@+id/ivElderCaregiverHome"
+                    app:layout_constraintVertical_bias="0.22" />
+
+                <TextView
+                    android:id="@+id/tvElderTeleponCaregiverHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="08123456789"
+                    android:textColor="@color/primary_blue"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toEndOf="@+id/imgTeleponElderCaregiverHome"
+                    app:layout_constraintTop_toTopOf="@+id/imgTeleponElderCaregiverHome" />
+
+                <ImageView
+                    android:id="@+id/ivElderStatusCaregiverHome"
+                    android:layout_width="43dp"
+                    android:layout_height="38dp"
+                    android:layout_marginTop="12dp"
+                    android:src="@drawable/ic_round_check_circle_outline_24_primary_blue"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.267"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivElderCaregiverHome" />
+
+                <TextView
+                    android:id="@+id/tvElderStatusCaregiverHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Baik-Baik Saja"
+                    android:textColor="@color/primary_blue"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivElderStatusCaregiverHome"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.183"
+                    app:layout_constraintStart_toEndOf="@+id/ivElderStatusCaregiverHome"
+                    app:layout_constraintTop_toTopOf="@+id/ivElderStatusCaregiverHome" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clElderCaregiverHome2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/rounder_corner_25"
+                android:padding="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/clElderCaregiverHome">
+
+                <ImageView
+                    android:id="@+id/ivElderCaregiverHome2"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/default_profile"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvElderNameCaregiverHome2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Himajime Sri"
+                    android:textColor="@color/primary_blue"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivElderCaregiverHome2"
+                    app:layout_constraintStart_toEndOf="@+id/ivElderCaregiverHome2"
+                    app:layout_constraintTop_toTopOf="@+id/ivElderCaregiverHome2"
+                    app:layout_constraintVertical_bias="0.22" />
+
+                <ImageView
+                    android:id="@+id/imgTeleponElderCaregiverHome2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/ic_round_phone_24"
+                    app:layout_constraintStart_toEndOf="@+id/ivElderCaregiverHome2"
+                    app:layout_constraintTop_toBottomOf="@+id/tvElderNameCaregiverHome2"
+                    app:tint="@color/primary_blue" />
+
+                <TextView
+                    android:id="@+id/tvElderTeleponCaregiverHome2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="081834275990"
+                    android:textColor="@color/primary_blue"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgTeleponElderCaregiverHome2"
+                    app:layout_constraintStart_toEndOf="@+id/imgTeleponElderCaregiverHome2"
+                    app:layout_constraintTop_toTopOf="@+id/imgTeleponElderCaregiverHome2"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <TextView
+                    android:id="@+id/tvElderStatusCaregiverHome2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Butuh Bantuan"
+                    android:textColor="@color/soft_red"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView21"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.162"
+                    app:layout_constraintStart_toEndOf="@+id/imageView21"
+                    app:layout_constraintTop_toTopOf="@+id/imageView21"
+                    app:layout_constraintVertical_bias="0.437" />
+
+                <ImageView
+                    android:id="@+id/imageView21"
+                    android:layout_width="43dp"
+                    android:layout_height="38dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/ic_round_error_outline_24"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.271"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivElderCaregiverHome2"
+                    app:tint="@color/soft_red" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
