@@ -5,53 +5,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/soft_red"
-    tools:context=".Meminta_BantuanFragment">
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="199dp"
-        android:layout_height="171dp"
-        android:src="@drawable/ic_round_error_outline_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.21" />
+    tools:context=".CaregiverElderMembatalkanBantuanFragment" >
 
     <TextView
-        android:id="@+id/Alert_Atribut"
-        android:layout_width="288dp"
-        android:layout_height="101dp"
-        android:text="BANTUAN AKAN SEGERA DATANG"
+        android:id="@+id/alert_Atribut7"
+        android:layout_width="322dp"
+        android:layout_height="81dp"
+        android:fontFamily="@font/sen"
+        android:text="membatalkan bantuan"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/background"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.573" />
+
+    <TextView
+        android:id="@+id/alert_Atribut8"
+        android:layout_width="275dp"
+        android:layout_height="58dp"
+        android:fontFamily="@font/sen"
+        android:text="Himejima Ujang"
         android:textAlignment="center"
         android:textColor="@color/background"
         android:textSize="34sp"
         android:textStyle="bold"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.547" />
+        app:layout_constraintVertical_bias="0.468" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button"
-        android:layout_width="224dp"
-        android:layout_height="66dp"
-        android:background="@drawable/rounded_corner"
-        android:text="Batal"
-        android:backgroundTint="@color/white"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="@color/soft_red"
-        android:textIsSelectable="false"
-        android:textSize="24sp"
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="199dp"
+        android:layout_height="171dp"
+        android:rotation="45"
+        android:src="@drawable/ic_round_add_circle_outline_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.751"
-        tools:textAllCaps="false" />
+        app:layout_constraintVertical_bias="0.216" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
