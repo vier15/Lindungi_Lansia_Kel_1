@@ -11,107 +11,131 @@
 
     <EditText
         android:id="@+id/etEmailLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="@color/pure_white"
         android:drawableStart="@drawable/ic_round_mail_outline_24"
+        android:elevation="1dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:minHeight="48dp"
+        android:padding="10dp"
+        android:translationZ="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.272" />
+        app:layout_constraintVertical_bias="0.27" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnBatalLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="7dp"
+        android:background="@drawable/rounded_corner"
         android:backgroundTint="@color/pure_white"
         android:drawableEnd="@drawable/ic_round_logout_24_soft_red"
+        android:fontFamily="@font/sen"
+        android:paddingStart="10dp"
+        android:paddingEnd="20dp"
         android:text="Batal"
         android:textAllCaps="false"
         android:textColor="@color/soft_red"
         app:layout_constraintBottom_toTopOf="@+id/btnDaftarLogin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.761"
+        app:layout_constraintHorizontal_bias="0.893"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.984" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnMasukLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="7dp"
+        android:background="@drawable/rounded_corner"
         android:backgroundTint="@color/pure_white"
         android:drawableEnd="@drawable/ic_round_login_24_primary_blue"
+        android:fontFamily="@font/sen"
+        android:paddingEnd="20dp"
         android:text="Masuk"
         android:textAllCaps="false"
         android:textColor="@color/primary_blue"
         app:layout_constraintBottom_toTopOf="@+id/btnDaftarLogin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.235"
+        app:layout_constraintHorizontal_bias="0.11"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.982"
+        tools:paddingStart="10dp" />
 
     <TextView
         android:id="@+id/tvEmailLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/sen"
         android:text="Email"
         android:textColor="@color/primary_blue"
         app:layout_constraintBottom_toTopOf="@+id/etEmailLogin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.265"
+        app:layout_constraintHorizontal_bias="0.083"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.994" />
+        app:layout_constraintVertical_bias="0.955" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnDaftarLogin"
-        android:layout_width="258dp"
-        android:layout_height="48dp"
-        android:background="#2C6BA6"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="@color/primary_blue"
+        android:elevation="1dp"
+        android:fontFamily="@font/sen_bold"
         android:text="Daftar"
         android:textAllCaps="false"
         android:textColor="@color/pure_white"
+        android:textSize="20sp"
+        android:translationZ="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.741" />
+        app:layout_constraintVertical_bias="0.743" />
 
     <EditText
         android:id="@+id/etPassLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:background="@drawable/rounded_corner"
         android:drawableStart="@drawable/ic_round_key_24"
+        android:elevation="1dp"
         android:ems="10"
         android:inputType="textPassword"
-        android:minHeight="48dp"
+        android:padding="10dp"
+        android:translationZ="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.397" />
+        app:layout_constraintVertical_bias="0.45" />
 
     <TextView
         android:id="@+id/tvPassLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/sen"
         android:text="Kata Sandi"
         android:textColor="@color/primary_blue"
         app:layout_constraintBottom_toTopOf="@+id/etPassLogin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.287"
+        app:layout_constraintHorizontal_bias="0.091"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.975" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

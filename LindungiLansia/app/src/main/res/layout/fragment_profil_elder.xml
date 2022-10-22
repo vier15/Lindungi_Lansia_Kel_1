@@ -19,7 +19,7 @@
             android:layout_height="118dp"
             android:layout_marginTop="48dp"
             android:src="@drawable/default_profile"
-
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
@@ -61,8 +61,8 @@
             android:layout_width="300dp"
             android:layout_height="56dp"
             android:layout_marginTop="36dp"
-            android:background="@drawable/rounded_corner"
-            android:backgroundTint="@color/background"
+            android:background="@color/background"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvSuntingNamaElder">
@@ -276,8 +276,7 @@
                 android:padding="0dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvJKProdilElder"
-                tools:background="@color/pure_white">
+                app:layout_constraintTop_toBottomOf="@+id/tvJKProdilElder">
 
                 <View
                     android:id="@+id/divider4"

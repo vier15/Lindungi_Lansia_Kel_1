@@ -28,7 +28,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.208"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.888"
         tools:fontFamily="@font/sen" />
 
     <Button
@@ -50,19 +51,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.791"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.888" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="104dp"
         android:fontFamily="@font/sen"
         android:text="30"
         android:textColor="@color/soft_red"
         android:textSize="60sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.436"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -72,35 +73,42 @@
         android:layout_height="53dp"
         android:scrollbarSize="20dp"
         android:src="@drawable/ic_round_alarm_24"
-        app:layout_constraintBottom_toBottomOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="@+id/textView2"
-        app:tint="@color/soft_red" />
+        android:tint="@color/soft_red"
+        tools:layout_editor_absoluteX="213dp"
+        tools:layout_editor_absoluteY="111dp" />
 
     <ImageView
         android:id="@+id/imageView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:src="@drawable/default_profile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        tools:layout_editor_absoluteX="105dp"
+        tools:layout_editor_absoluteY="206dp" />
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="295dp"
-        android:layout_height="98dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="297dp"
+        android:layout_height="121dp"
         android:fontFamily="@font/sen"
         android:text="Himejima Ujang     BUTUH BANTUAN"
         android:textAlignment="center"
         android:textColor="@color/soft_red"
         android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView16" />
+        tools:layout_editor_absoluteX="57dp"
+        tools:layout_editor_absoluteY="424dp" />
+
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="102dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.003"
+        tools:layout_editor_absoluteX="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

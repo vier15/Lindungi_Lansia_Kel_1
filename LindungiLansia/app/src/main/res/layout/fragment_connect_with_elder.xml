@@ -14,12 +14,9 @@
         android:id="@+id/imageView12"
         android:layout_width="224dp"
         android:layout_height="202dp"
-        android:layout_marginTop="36dp"
         android:src="@drawable/ic_baseline_circle_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        tools:layout_editor_absoluteX="93dp"
+        tools:layout_editor_absoluteY="264dp" />
 
     <TextView
         android:id="@+id/textView5"
@@ -30,32 +27,24 @@
         android:textAlignment="center"
         android:textColor="@color/background"
         android:textSize="38sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.17" />
+        tools:layout_editor_absoluteX="68dp"
+        tools:layout_editor_absoluteY="155dp" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
         android:fontFamily="@font/sen"
         android:text="Himejima Ujang"
         android:textColor="@color/background"
         android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView12" />
+        tools:layout_editor_absoluteX="74dp"
+        tools:layout_editor_absoluteY="502dp" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <Button
         android:id="@+id/button4"
         android:layout_width="118dp"
         android:layout_height="61dp"
-        android:layout_marginTop="32dp"
         android:backgroundTint="@color/background"
         android:fontFamily="@font/sen"
         android:shadowColor="@color/primary_blue"
@@ -65,9 +54,11 @@
         android:textColorHint="@color/background"
         android:textSize="36sp"
         app:cornerRadius="@android:dimen/app_icon_size"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.868" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
