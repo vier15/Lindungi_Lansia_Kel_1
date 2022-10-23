@@ -10,10 +10,10 @@ import android.view.ViewGroup;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link TidakBisaBantuElderFragment#newInstance} factory method to
+ * Use the {@link CaregiverTidakBisaBantuElderFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class TidakBisaBantuElderFragment extends Fragment {
+public class CaregiverTidakBisaBantuElderFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +24,7 @@ public class TidakBisaBantuElderFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public TidakBisaBantuElderFragment() {
+    public CaregiverTidakBisaBantuElderFragment() {
         // Required empty public constructor
     }
 
@@ -37,8 +37,8 @@ public class TidakBisaBantuElderFragment extends Fragment {
      * @return A new instance of fragment TidakBisaBantuElderFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static TidakBisaBantuElderFragment newInstance(String param1, String param2) {
-        TidakBisaBantuElderFragment fragment = new TidakBisaBantuElderFragment();
+    public static CaregiverTidakBisaBantuElderFragment newInstance(String param1, String param2) {
+        CaregiverTidakBisaBantuElderFragment fragment = new CaregiverTidakBisaBantuElderFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -59,6 +59,6 @@ public class TidakBisaBantuElderFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tidak_bisa_bantu_elder, container, false);
+        return inflater.inflate(R.layout.fragment_caregiver_tidak_bisa_bantu_elder, container, false);
     }
 }
