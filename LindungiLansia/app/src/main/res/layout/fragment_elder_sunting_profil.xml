@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@color/primary_blue">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ElderSuntingProfilFragment"
+        android:padding="20dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/grpBtnSuntingProfilElder"
+            android:layout_width="300dp"
+            android:layout_height="56dp"
+            android:background="@drawable/rounder_corner_25"
+            android:layout_marginTop="36dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etNamaSuntingProfilElder">
+
+            <View
+                android:id="@+id/grpBtnDivider2"
+                android:layout_width="1dp"
+                android:layout_height="54dp"
+                android:background="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btnSuntingProfilElder2"
+                android:layout_width="131dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:background="#00FFFFFF"
+                android:text="Sunting Profil"
+                android:textColor="@color/jet_black"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/grpBtnDivider2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btnRekamMedisElder2"
+                android:layout_width="113dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="24dp"
+                android:background="#00FFFFFF"
+                android:text="Rekam Medis"
+                android:textColor="@color/jet_black"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/grpBtnDivider2"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/btnKembaliSuntingProfilElder"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="107dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:drawableStart="@drawable/ic_round_arrow_back_ios_24_pure_white"
+            android:fontFamily="sans-serif"
+            android:text="Kembali"
+            android:textAllCaps="false"
+            android:textColor="@color/pure_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.013"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgSuntingProfilElder"
+            android:layout_width="112dp"
+            android:layout_height="118dp"
+            android:layout_marginTop="48dp"
+            android:src="@drawable/default_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutDataSuntingProfilElder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/rounded_corner"
+            android:padding="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.513"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/grpBtnSuntingProfilElder">
+
+            <TextView
+                android:id="@+id/tvJudulJKSuntingProfilElder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="20dp"
+                android:text="Jenis Kelamin"
+                android:textColor="@color/primary_blue"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivTglLahirSuntingProfilElder" />
+
+            <TextView
+                android:id="@+id/tvJudulTglLahirSuntingProfilElder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="20dp"
+                android:text="Tanggal Lahir"
+                android:textColor="@color/primary_blue"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgTeleponSuntingProfilElder" />
+
+            <ImageView
+                android:id="@+id/imgEmailSuntingProfilElder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:src="@drawable/ic_round_mail_outline_24"
+                app:layout_constraintBottom_toBottomOf="@+id/etEmailSuntingProfilElder"
+                app:layout_constraintEnd_toStartOf="@+id/etEmailSuntingProfilElder"
+                app:layout_constraintTop_toTopOf="@+id/etEmailSuntingProfilElder"
+                app:tint="@color/primary_blue" />
+
+            <TextView
+                android:id="@+id/tvJudulSuntingEmailProfilElder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
+                android:text="Email"
+                android:textColor="@color/primary_blue"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvJudulTeleponSuntingProfilElder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="20dp"
+                android:text="Telepon"
+                android:textColor="@color/primary_blue"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgEmailSuntingProfilElder" />
+
+            <ImageView
+                android:id="@+id/imgTeleponSuntingProfilElder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:src="@drawable/ic_round_phone_24"
+                app:layout_constraintBottom_toBottomOf="@+id/etTeleponSuntingProfilElder"
+                app:layout_constraintEnd_toStartOf="@+id/etTeleponSuntingProfilElder"
+                app:layout_constraintTop_toTopOf="@+id/etTeleponSuntingProfilElder"
+                app:tint="@color/primary_blue" />
+
+            <ImageView
+                android:id="@+id/ivTglLahirSuntingProfilElder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:src="@drawable/ic_round_cake_24"
+                app:layout_constraintBottom_toBottomOf="@+id/etTglLahirSuntingProfilElder"
+                app:layout_constraintEnd_toStartOf="@+id/etTglLahirSuntingProfilElder"
+                app:layout_constraintTop_toTopOf="@+id/etTglLahirSuntingProfilElder"
+                app:tint="@color/primary_blue" />
+
+            <ImageView
+                android:id="@+id/ivJKProfilElder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                app:layout_constraintBottom_toBottomOf="@+id/etJKSuntingProfilElder"
+                app:layout_constraintEnd_toStartOf="@+id/etJKSuntingProfilElder"
+                app:layout_constraintTop_toTopOf="@+id/etJKSuntingProfilElder"
+                app:srcCompat="@drawable/ic_baseline_male_24"
+                app:tint="@color/primary_blue" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl3DataSuntingProfilElder"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="20dp"
+                android:background="#002C6BA6"
+                android:padding="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etJKSuntingProfilElder">
+
+                <EditText
+                    android:id="@+id/etGolDarahSuntingProfilElder"
+                    android:layout_width="80dp"
+                    android:layout_height="48dp"
+                    android:background="@color/background"
+                    android:drawableStart="@drawable/ic_round_bloodtype_24_primary_blue"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/jet_black"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/div3DataSuntingProfilElder2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/etBeratSuntingProfilElder"
+                    android:layout_width="80dp"
+                    android:layout_height="48dp"
+                    android:background="@color/background"
+                    android:drawableStart="@drawable/ic_round_monitor_weight_24_primary_blue"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:textColor="@color/jet_black"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/div3DataSuntingProfilElder2"
+                    app:layout_constraintStart_toEndOf="@+id/div3DataSuntingProfilElder1"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/div3DataSuntingProfilElder1"
+                    android:layout_width="1dp"
+                    android:layout_height="45dp"
+                    android:background="@color/jet_black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.32"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.4" />
+
+                <View
+                    android:id="@+id/div3DataSuntingProfilElder2"
+                    android:layout_width="1dp"
+                    android:layout_height="38dp"
+                    android:background="@color/jet_black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/div3DataSuntingProfilElder1"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/etTinggiSuntingProfilElder"
+                    android:layout_width="80dp"
+                    android:layout_height="48dp"
+                    android:background="@color/background"
+                    android:drawableStart="@drawable/ic_round_straighten_24_primary_blue"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:textColor="@color/jet_black"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/div3DataSuntingProfilElder1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <EditText
+                android:id="@+id/etTglLahirSuntingProfilElder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/background"
+                android:ems="10"
+                android:inputType="date"
+                android:minHeight="48dp"
+                android:textColor="@color/jet_black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.26"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvJudulTglLahirSuntingProfilElder" />
+
+            <EditText
+                android:id="@+id/etTeleponSuntingProfilElder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@color/background"
+                android:ems="10"
+                android:inputType="phone"
+                android:minHeight="48dp"
+                android:textColor="@color/jet_black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.26"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvJudulTeleponSuntingProfilElder" />
+
+            <EditText
+                android:id="@+id/etEmailSuntingProfilElder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/background"
+                android:ems="10"
+                android:inputType="textEmailAddress"
+                android:minHeight="48dp"
+                android:textColor="@color/jet_black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.251"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvJudulSuntingEmailProfilElder" />
+
+            <EditText
+                android:id="@+id/etJKSuntingProfilElder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/background"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:textColor="@color/jet_black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.241"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvJudulJKSuntingProfilElder" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSimpanSuntingProfilElder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/primary_blue"
+                android:text="Simpan"
+                android:textColor="@color/pure_white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cl3DataSuntingProfilElder" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <EditText
+            android:id="@+id/etNamaSuntingProfilElder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:text="Nama"
+            android:textColor="@color/pure_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgSuntingProfilElder" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+

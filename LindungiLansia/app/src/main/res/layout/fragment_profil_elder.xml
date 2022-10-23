@@ -13,33 +13,6 @@
         android:padding="20dp"
         tools:context=".ProfilElderFragment">
 
-        <ImageView
-            android:id="@+id/imgProfilElder"
-            android:layout_width="112dp"
-            android:layout_height="118dp"
-            android:layout_marginTop="48dp"
-            android:src="@drawable/default_profile"
-            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tvSuntingNamaElder"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:fontFamily="sans-serif"
-            android:text="Nama Elder"
-            android:textAlignment="center"
-            android:textColor="@color/pure_white"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgProfilElder" />
-
         <Button
             android:id="@+id/btnKembaliProfilElder"
             style="@style/Widget.AppCompat.Button.Borderless"
@@ -56,16 +29,41 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <ImageView
+            android:id="@+id/imgProfilElder"
+            android:layout_width="112dp"
+            android:layout_height="118dp"
+            android:layout_marginTop="48dp"
+            android:src="@drawable/default_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvNamaProfilElder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="sans-serif"
+            android:text="Nama Elder"
+            android:textAlignment="center"
+            android:textColor="@color/pure_white"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgProfilElder" />
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/grpBtnProfilElder"
             android:layout_width="300dp"
             android:layout_height="56dp"
             android:layout_marginTop="36dp"
-            android:background="@color/background"
-
+            android:background="@drawable/rounder_corner_25"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvSuntingNamaElder">
+            app:layout_constraintTop_toBottomOf="@+id/tvNamaProfilElder">
 
             <View
                 android:id="@+id/grpBtnDivider"
@@ -105,13 +103,14 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/layoutDataProfilElderEdit"
-            android:layout_width="339dp"
+            android:id="@+id/layoutDataProfilElder"
+            android:layout_width="match_parent"
             android:layout_height="482dp"
             android:layout_marginTop="40dp"
+            android:padding="20dp"
             android:background="@drawable/rounded_corner"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.381"
+            app:layout_constraintHorizontal_bias="0.513"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/grpBtnProfilElder">
 
@@ -119,25 +118,23 @@
                 android:id="@+id/tvJudulJKProfilElder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
                 android:layout_marginTop="20dp"
                 android:text="Jenis Kelamin"
                 android:textColor="@color/primary_blue"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.106"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView15" />
+                app:layout_constraintTop_toBottomOf="@+id/ivTglLahirProfilElder" />
 
             <TextView
                 android:id="@+id/tvJKProdilElder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
                 android:layout_marginTop="8dp"
                 android:text="Laki-laki"
                 android:textColor="@color/jet_black"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.22"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvJudulJKProfilElder" />
 
@@ -145,12 +142,11 @@
                 android:id="@+id/tvTglLahirProfilElder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
                 android:layout_marginTop="8dp"
                 android:text="15 Agustus 1888"
                 android:textColor="@color/jet_black"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.288"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvJudulTglLahirProfilElder" />
 
@@ -158,12 +154,11 @@
                 android:id="@+id/tvJudulTglLahirProfilElder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
                 android:layout_marginTop="20dp"
                 android:text="Tanggal Lahir"
                 android:textColor="@color/primary_blue"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.106"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imgTeleponProfilElder" />
 
@@ -183,12 +178,11 @@
                 android:id="@+id/tvJudulEmailProfilElder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="36dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
                 android:text="Email"
                 android:textColor="@color/primary_blue"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.088"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -196,12 +190,11 @@
                 android:id="@+id/tvEmailProfilElderEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="8dp"
                 android:text="contoh@email.com"
                 android:textColor="@color/jet_black"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.33"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvJudulEmailProfilElder" />
 
@@ -209,12 +202,11 @@
                 android:id="@+id/tvJudulTeleponProfilElder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
                 android:layout_marginTop="20dp"
                 android:text="Telepon"
                 android:textColor="@color/primary_blue"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.091"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imgEmailProfilElder" />
 
@@ -222,12 +214,11 @@
                 android:id="@+id/tvTeleponProfilElder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
                 android:layout_marginTop="8dp"
                 android:text="081234567890"
                 android:textColor="@color/jet_black"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.288"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvJudulTeleponProfilElder" />
 
@@ -244,7 +235,7 @@
                 app:tint="@color/primary_blue" />
 
             <ImageView
-                android:id="@+id/imageView15"
+                android:id="@+id/ivTglLahirProfilElder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -256,7 +247,7 @@
                 app:tint="@color/primary_blue" />
 
             <ImageView
-                android:id="@+id/imageView13"
+                android:id="@+id/ivJKProfilElder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -268,8 +259,8 @@
                 app:tint="@color/primary_blue" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout4"
-                android:layout_width="263dp"
+                android:id="@+id/cl3DataProfilElder"
+                android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
                 android:background="#002C6BA6"
@@ -279,7 +270,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvJKProdilElder">
 
                 <View
-                    android:id="@+id/divider4"
+                    android:id="@+id/div3DataProfilElder1"
                     android:layout_width="1dp"
                     android:layout_height="45dp"
                     android:background="@color/jet_black"
@@ -298,19 +289,19 @@
                     android:text="166 cm"
                     android:textColor="@color/jet_black"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/divider4"
+                    app:layout_constraintEnd_toStartOf="@+id/div3DataProfilElder1"
                     app:layout_constraintHorizontal_bias="0.627"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <View
-                    android:id="@+id/divider5"
+                    android:id="@+id/div3DataProfilElder2"
                     android:layout_width="1dp"
                     android:layout_height="38dp"
                     android:background="@color/jet_black"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/divider4"
+                    app:layout_constraintStart_toEndOf="@+id/div3DataProfilElder1"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
@@ -321,8 +312,8 @@
                     android:text="57 kg"
                     android:textColor="@color/jet_black"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/divider5"
-                    app:layout_constraintStart_toEndOf="@+id/divider4"
+                    app:layout_constraintEnd_toStartOf="@+id/div3DataProfilElder2"
+                    app:layout_constraintStart_toEndOf="@+id/div3DataProfilElder1"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
@@ -334,7 +325,7 @@
                     android:textColor="@color/jet_black"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/divider5"
+                    app:layout_constraintStart_toEndOf="@+id/div3DataProfilElder2"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -348,7 +339,7 @@
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout4" />
+                app:layout_constraintTop_toBottomOf="@+id/cl3DataProfilElder" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
