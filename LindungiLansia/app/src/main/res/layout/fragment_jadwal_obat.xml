@@ -74,8 +74,12 @@
                 android:text="Paracetamol"
                 android:textColor="@color/pure_white"
                 android:textSize="24sp"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="16dp" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.075"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.231" />
 
             <ImageView
                 android:id="@+id/imageView12"
@@ -83,8 +87,12 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_round_access_alarm_24"
                 android:tint="@color/pure_white"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="57dp" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.047"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.78" />
 
             <TextView
                 android:id="@+id/textView7"
@@ -94,8 +102,12 @@
                 android:text="09.00"
                 android:textColor="@color/pure_white"
                 android:textSize="20sp"
-                tools:layout_editor_absoluteX="52dp"
-                tools:layout_editor_absoluteY="57dp" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.17"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.78" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -113,8 +125,12 @@
                 android:text="FG Troches"
                 android:textColor="@color/pure_white"
                 android:textSize="24sp"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="16dp" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.068"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.231" />
 
             <TextView
                 android:id="@+id/textView9"
@@ -124,8 +140,12 @@
                 android:text="20.00"
                 android:textColor="@color/pure_white"
                 android:textSize="20sp"
-                tools:layout_editor_absoluteX="52dp"
-                tools:layout_editor_absoluteY="57dp" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.17"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.78" />
 
             <ImageView
                 android:id="@+id/imageView14"
@@ -133,8 +153,12 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_round_access_alarm_24"
                 android:tint="@color/pure_white"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="57dp" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.047"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.78" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
@@ -162,8 +186,12 @@
                 android:text="Orginium Serum"
                 android:textColor="@color/pure_white"
                 android:textSize="24sp"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="16dp" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.092"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.231" />
 
             <TextView
                 android:id="@+id/textView11"
@@ -173,8 +201,12 @@
                 android:text="09.30"
                 android:textColor="@color/pure_white"
                 android:textSize="20sp"
-                tools:layout_editor_absoluteX="52dp"
-                tools:layout_editor_absoluteY="57dp" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.167"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.78" />
 
             <ImageView
                 android:id="@+id/imageView16"
@@ -182,8 +214,12 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_round_access_alarm_24"
                 android:tint="@color/pure_white"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="57dp" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.047"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.78" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
