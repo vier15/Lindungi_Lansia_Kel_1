@@ -52,7 +52,7 @@
         android:textColor="@color/primary_blue"
         android:textColorHighlight="@color/primary_blue"
         android:textColorHint="@color/background"
-        android:textSize="36sp"
+        android:textSize="24sp"
         app:cornerRadius="@android:dimen/app_icon_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
