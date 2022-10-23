@@ -22,9 +22,9 @@
 
     <TextView
         android:id="@+id/splashScreenTitle"
-        android:layout_width="265dp"
-        android:layout_height="46dp"
-        android:fontFamily="@font/quicksand"
+        android:layout_width="294dp"
+        android:layout_height="65dp"
+        android:fontFamily="@font/sen_bold"
         android:text="Lindungi Lansia"
         android:textAlignment="center"
         android:textColor="@color/pure_white"
