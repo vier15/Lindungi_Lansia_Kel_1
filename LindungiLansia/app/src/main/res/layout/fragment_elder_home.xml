@@ -14,8 +14,10 @@
         android:src="@drawable/ic_round_diversity_1_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.387"
         app:tint="@color/shadow_white" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -26,5 +28,22 @@
         android:src="@drawable/ic_round_menu_24"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button5"
+        android:layout_width="224dp"
+        android:layout_height="65dp"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="@color/primary_blue"
+        android:elevation="1dp"
+        android:text="Butuh Bantuan"
+        android:textColor="@color/pure_white"
+        android:translationZ="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/elderHomeBG"
+        app:layout_constraintVertical_bias="0.254" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

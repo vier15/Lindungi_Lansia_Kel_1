@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/launch"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.kel1.lindungilansia.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_elderHomeFragment"
+            app:destination="@id/elderHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.kel1.lindungilansia.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_roleRegisterFragment"
+            app:destination="@id/roleRegisterFragment" />
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/roleRegisterFragment"
+        android:name="com.kel1.lindungilansia.RoleRegisterFragment"
+        android:label="fragment_role_register"
+        tools:layout="@layout/fragment_role_register" >
+        <action
+            android:id="@+id/action_roleRegisterFragment_to_elderHomeFragment"
+            app:destination="@id/elderHomeFragment" />
+        <action
+            android:id="@+id/action_roleRegisterFragment_to_caregiverHomeFragment"
+            app:destination="@id/caregiverHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/elderHomeFragment"
+        android:name="com.kel1.lindungilansia.ElderHomeFragment"
+        android:label="fragment_elder_home"
+        tools:layout="@layout/fragment_elder_home" >
+        <action
+            android:id="@+id/action_elderHomeFragment_to_navBarFragment"
+            app:destination="@id/navBarFragment" />
+        <action
+            android:id="@+id/action_elderHomeFragment_to_meminta_BantuanFragment"
+            app:destination="@id/meminta_BantuanFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/navBarFragment"
+        android:name="com.kel1.lindungilansia.navBarFragment"
+        android:label="fragment_nav_bar"
+        tools:layout="@layout/fragment_nav_bar" >
+        <action
+            android:id="@+id/action_navBarFragment_to_elderHomeFragment"
+            app:destination="@id/elderHomeFragment" />
+        <action
+            android:id="@+id/action_navBarFragment_to_profilElderFragment"
+            app:destination="@id/profilElderFragment" />
+        <action
+            android:id="@+id/action_navBarFragment_to_linkWithCaregiverFragment"
+            app:destination="@id/linkWithCaregiverFragment" />
+        <action
+            android:id="@+id/action_navBarFragment_to_jadwalObatFragment"
+            app:destination="@id/jadwalObatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profilElderFragment"
+        android:name="com.kel1.lindungilansia.ProfilElderFragment"
+        android:label="ProfilElderFragment" >
+        <action
+            android:id="@+id/action_profilElderFragment_to_elderSuntingProfilFragment"
+            app:destination="@id/elderSuntingProfilFragment" />
+        <action
+            android:id="@+id/action_profilElderFragment_to_elderRekamMedisFragment"
+            app:destination="@id/elderRekamMedisFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/linkWithCaregiverFragment"
+        android:name="com.kel1.lindungilansia.LinkWithCaregiverFragment"
+        android:label="fragment_link_with_caregiver"
+        tools:layout="@layout/fragment_link_with_caregiver" />
+    <fragment
+        android:id="@+id/jadwalObatFragment"
+        android:name="com.kel1.lindungilansia.JadwalObatFragment"
+        android:label="fragment_jadwal_obat"
+        tools:layout="@layout/fragment_jadwal_obat" />
+    <fragment
+        android:id="@+id/elderSuntingProfilFragment"
+        android:name="com.kel1.lindungilansia.ElderSuntingProfilFragment"
+        android:label="ElderSuntingProfilFragment" />
+    <fragment
+        android:id="@+id/elderRekamMedisFragment"
+        android:name="com.kel1.lindungilansia.ElderRekamMedisFragment"
+        android:label="fragment_elder_rekam_medis"
+        tools:layout="@layout/fragment_elder_rekam_medis" />
+    <fragment
+        android:id="@+id/meminta_BantuanFragment"
+        android:name="com.kel1.lindungilansia.Meminta_BantuanFragment"
+        android:label="fragment_meminta__bantuan"
+        tools:layout="@layout/fragment_meminta__bantuan" >
+        <action
+            android:id="@+id/action_meminta_BantuanFragment_to_caregiverElderMembatalkanBantuanFragment"
+            app:destination="@id/caregiverElderMembatalkanBantuanFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/caregiverElderMembatalkanBantuanFragment"
+        android:name="com.kel1.lindungilansia.CaregiverElderMembatalkanBantuanFragment"
+        android:label="fragment_caregiver_elder_membatalkan_bantuan"
+        tools:layout="@layout/fragment_caregiver_elder_membatalkan_bantuan" />
+    <fragment
+        android:id="@+id/caregiverHomeFragment"
+        android:name="com.kel1.lindungilansia.CaregiverHomeFragment"
+        android:label="CaregiverHomeFragment" />
+</navigation>

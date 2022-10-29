@@ -115,7 +115,7 @@
         android:ems="10"
         android:inputType="textPassword"
         android:padding="10dp"
-        android:translationZ="2dp"
+        android:translationZ="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
