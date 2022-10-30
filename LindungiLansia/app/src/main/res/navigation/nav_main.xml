@@ -70,6 +70,9 @@
         <action
             android:id="@+id/action_navBarFragment_to_jadwalObatFragment"
             app:destination="@id/jadwalObatFragment" />
+        <action
+            android:id="@+id/action_navBarFragment_to_elderRekamMedisFragment"
+            app:destination="@id/elderRekamMedisFragment" />
     </fragment>
     <fragment
         android:id="@+id/profilElderFragment"

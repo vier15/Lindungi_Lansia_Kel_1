@@ -73,6 +73,15 @@ public class navBarFragment extends Fragment {
             }
         });
 
+        // Navigasi ke halaman rekam medis
+        Chip chipRekamMedis = view.findViewById(R.id.chipRekamMedis);
+        chipRekamMedis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_navBarFragment_to_elderRekamMedisFragment);
+            }
+        });
+
         // Navigasi ke halaman link with caregiver
         Chip chipLinkCaregiver = view.findViewById(R.id.chipLinkCaregiver);
         chipLinkCaregiver.setOnClickListener(new View.OnClickListener() {
