@@ -84,6 +84,9 @@
         <action
             android:id="@+id/action_profilElderFragment_to_elderRekamMedisFragment"
             app:destination="@id/elderRekamMedisFragment" />
+        <action
+            android:id="@+id/action_profilElderFragment_to_elderHomeFragment"
+            app:destination="@id/elderHomeFragment" />
     </fragment>
     <fragment
         android:id="@+id/linkWithCaregiverFragment"
