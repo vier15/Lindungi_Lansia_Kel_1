@@ -89,12 +89,20 @@
         android:id="@+id/linkWithCaregiverFragment"
         android:name="com.kel1.lindungilansia.LinkWithCaregiverFragment"
         android:label="fragment_link_with_caregiver"
-        tools:layout="@layout/fragment_link_with_caregiver" />
+        tools:layout="@layout/fragment_link_with_caregiver" >
+        <action
+            android:id="@+id/action_linkWithCaregiverFragment_to_navBarFragment"
+            app:destination="@id/navBarFragment" />
+    </fragment>
     <fragment
         android:id="@+id/jadwalObatFragment"
         android:name="com.kel1.lindungilansia.JadwalObatFragment"
         android:label="fragment_jadwal_obat"
-        tools:layout="@layout/fragment_jadwal_obat" />
+        tools:layout="@layout/fragment_jadwal_obat" >
+        <action
+            android:id="@+id/action_jadwalObatFragment_to_navBarFragment"
+            app:destination="@id/navBarFragment" />
+    </fragment>
     <fragment
         android:id="@+id/elderSuntingProfilFragment"
         android:name="com.kel1.lindungilansia.ElderSuntingProfilFragment"
