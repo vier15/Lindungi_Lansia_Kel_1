@@ -107,16 +107,16 @@
         android:label="fragment_meminta__bantuan"
         tools:layout="@layout/fragment_meminta__bantuan" >
         <action
-            android:id="@+id/action_meminta_BantuanFragment_to_caregiverElderMembatalkanBantuanFragment"
-            app:destination="@id/caregiverElderMembatalkanBantuanFragment" />
+            android:id="@+id/action_meminta_BantuanFragment_to_bantuan_BatalFragment"
+            app:destination="@id/bantuan_BatalFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/caregiverElderMembatalkanBantuanFragment"
-        android:name="com.kel1.lindungilansia.CaregiverElderMembatalkanBantuanFragment"
-        android:label="fragment_caregiver_elder_membatalkan_bantuan"
-        tools:layout="@layout/fragment_caregiver_elder_membatalkan_bantuan" />
     <fragment
         android:id="@+id/caregiverHomeFragment"
         android:name="com.kel1.lindungilansia.CaregiverHomeFragment"
         android:label="CaregiverHomeFragment" />
+    <fragment
+        android:id="@+id/bantuan_BatalFragment"
+        android:name="com.kel1.lindungilansia.Bantuan_BatalFragment"
+        android:label="fragment_bantuan__batal"
+        tools:layout="@layout/fragment_bantuan__batal" />
 </navigation>

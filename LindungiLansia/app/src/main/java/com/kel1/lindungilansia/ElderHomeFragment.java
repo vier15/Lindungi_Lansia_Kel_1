@@ -64,11 +64,21 @@ public class ElderHomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_elder_home, container, false);
 
+        // Navigasi ke navbar
         FloatingActionButton btnNavBar = view.findViewById(R.id.btnNavBar);
         btnNavBar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Navigation.findNavController(view).navigate(R.id.action_elderHomeFragment_to_navBarFragment);
+            }
+        });
+
+        // Navigasi ke navbar
+        Button btnElderHomeButuhBantuan = view.findViewById(R.id.btnElderHomeButuhBantuan);
+        btnElderHomeButuhBantuan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_elderHomeFragment_to_meminta_BantuanFragment);
             }
         });
 

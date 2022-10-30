@@ -58,24 +58,27 @@
             app:layout_constraintVertical_bias="1.0">
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/rekamMedis"
+                android:id="@+id/chipRekamMedis"
                 android:layout_width="0dp"
                 android:layout_height="67dp"
+                android:layout_marginTop="16dp"
                 app:chipBackgroundColor="@color/shadow_blue"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.457"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="16dp" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/imageView7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
                 android:src="@drawable/ic_baseline_person_outline_24"
-                android:tint="@color/primary_blue"
                 app:layout_constraintBottom_toBottomOf="@+id/tvRekamMedis"
+                app:layout_constraintEnd_toStartOf="@+id/tvRekamMedis"
                 app:layout_constraintTop_toTopOf="@+id/tvRekamMedis"
-                tools:layout_editor_absoluteX="32dp" />
+                app:layout_constraintVertical_bias="0.5"
+                app:tint="@color/primary_blue" />
 
             <TextView
                 android:id="@+id/tvRekamMedis"
@@ -84,19 +87,19 @@
                 android:fontFamily="@font/sen_bold"
                 android:text="Rekam Medis"
                 android:textColor="@color/primary_blue"
-                app:layout_constraintBottom_toTopOf="@+id/linkCaregiver"
+                app:layout_constraintBottom_toTopOf="@+id/chipLinkCaregiver"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/rekamMedis" />
+                app:layout_constraintTop_toTopOf="@+id/chipRekamMedis" />
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/linkCaregiver"
+                android:id="@+id/chipLinkCaregiver"
                 android:layout_width="0dp"
                 android:layout_height="67dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="83dp" />
+                app:layout_constraintTop_toBottomOf="@+id/chipRekamMedis" />
 
             <TextView
                 android:id="@+id/tvLinkCaregiver"
@@ -105,52 +108,58 @@
                 android:fontFamily="@font/sen"
                 android:text="Sambungkan dengan Caregiver"
                 android:textColor="@color/jet_black"
-                app:layout_constraintBottom_toBottomOf="@+id/linkCaregiver"
-                app:layout_constraintEnd_toEndOf="@+id/linkCaregiver"
+                app:layout_constraintBottom_toBottomOf="@+id/chipLinkCaregiver"
+                app:layout_constraintEnd_toEndOf="@+id/chipLinkCaregiver"
                 app:layout_constraintHorizontal_bias="0.661"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rekamMedis"
+                app:layout_constraintTop_toBottomOf="@+id/chipRekamMedis"
                 app:layout_constraintVertical_bias="0.514" />
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/jadwalObat"
+                android:id="@+id/chipJadwalObat"
                 android:layout_width="0dp"
                 android:layout_height="67dp"
+                android:layout_marginTop="66dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.457"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="149dp" />
+                app:layout_constraintTop_toTopOf="@+id/chipLinkCaregiver" />
 
             <TextView
                 android:id="@+id/tvJadwalObat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/sen"
-                android:text="Rekam Medis"
+                android:text="Jadwal Obat"
                 android:textColor="@color/jet_black"
-                app:layout_constraintEnd_toEndOf="@+id/jadwalObat"
-                app:layout_constraintStart_toStartOf="@+id/jadwalObat"
-                tools:layout_editor_absoluteY="174dp" />
+                app:layout_constraintBottom_toBottomOf="@+id/chipJadwalObat"
+                app:layout_constraintEnd_toEndOf="@+id/chipJadwalObat"
+                app:layout_constraintStart_toStartOf="@+id/chipJadwalObat"
+                app:layout_constraintTop_toTopOf="@+id/chipJadwalObat" />
 
             <ImageView
                 android:id="@+id/imageView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
                 android:src="@drawable/ic_outline_add_reaction_24"
-                android:tint="@color/primary_blue"
                 app:layout_constraintBottom_toBottomOf="@+id/tvLinkCaregiver"
+                app:layout_constraintEnd_toStartOf="@+id/tvLinkCaregiver"
                 app:layout_constraintTop_toTopOf="@+id/tvLinkCaregiver"
-                tools:layout_editor_absoluteX="32dp" />
+                app:layout_constraintVertical_bias="0.5"
+                app:tint="@color/primary_blue" />
 
             <ImageView
                 android:id="@+id/imageView10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="36dp"
                 android:src="@drawable/ic_outline_calendar_month_24"
-                android:tint="@color/primary_blue"
                 app:layout_constraintBottom_toBottomOf="@+id/tvJadwalObat"
+                app:layout_constraintEnd_toStartOf="@+id/tvJadwalObat"
                 app:layout_constraintTop_toTopOf="@+id/tvJadwalObat"
-                tools:layout_editor_absoluteX="32dp" />
+                app:layout_constraintVertical_bias="0.5"
+                app:tint="@color/primary_blue" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

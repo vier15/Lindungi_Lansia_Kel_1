@@ -35,7 +35,7 @@
         app:layout_constraintVertical_bias="0.547" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button"
+        android:id="@+id/btnMemintaBantuanBatal"
         android:layout_width="224dp"
         android:layout_height="66dp"
         android:background="@drawable/rounded_corner"
