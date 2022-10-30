@@ -63,11 +63,21 @@ public class JadwalObatFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_jadwal_obat, container, false);
 
+        // Navigasi ke navbar
         FloatingActionButton btnJadwalObatNavBar = view.findViewById(R.id.btnJadwalObatNavBar);
         btnJadwalObatNavBar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Navigation.findNavController(view).navigate(R.id.action_jadwalObatFragment_to_navBarFragment);
+            }
+        });
+
+        // Navigasi ke halaman tambah jadwal obat
+        FloatingActionButton btnJadwalObatTambahJadwalObat = view.findViewById(R.id.btnJadwalObatTambahJadwalObat);
+        btnJadwalObatTambahJadwalObat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_jadwalObatFragment_to_tambahObatFragment);
             }
         });
 

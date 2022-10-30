@@ -9,16 +9,20 @@
     tools:context=".TambahObatFragment">
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnTambahJadwalObatKembali"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:drawableStart="@drawable/ic_round_arrow_back_ios_new_24"
         android:fontFamily="@font/sen"
         android:text="Kembali"
         android:textAllCaps="false"
         android:textColor="@color/primary_blue"
-        tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="6dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView13"
@@ -35,15 +39,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.61" />
 
-    <ImageView
-        android:id="@+id/imageView17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_round_arrow_back_ios_new_24"
-        android:tint="@color/primary_blue"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="18dp" />
-
     <TextView
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
@@ -59,16 +54,16 @@
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="380dp"
-        android:layout_height="579dp"
+        android:layout_width="385dp"
+        android:layout_height="445dp"
         android:background="@drawable/rounder_corner_25"
         android:backgroundTint="@color/primary_blue"
         android:orientation="vertical"
         android:paddingTop="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="279dp">
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/textView14"

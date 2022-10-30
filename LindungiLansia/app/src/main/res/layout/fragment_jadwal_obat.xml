@@ -223,7 +223,7 @@
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton4"
+        android:id="@+id/btnJadwalObatTambahJadwalObat"
         android:layout_width="123dp"
         android:layout_height="wrap_content"
         android:clickable="true"

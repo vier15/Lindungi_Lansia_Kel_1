@@ -102,6 +102,9 @@
         <action
             android:id="@+id/action_jadwalObatFragment_to_navBarFragment"
             app:destination="@id/navBarFragment" />
+        <action
+            android:id="@+id/action_jadwalObatFragment_to_tambahObatFragment"
+            app:destination="@id/tambahObatFragment" />
     </fragment>
     <fragment
         android:id="@+id/elderSuntingProfilFragment"
@@ -130,4 +133,13 @@
         android:name="com.kel1.lindungilansia.Bantuan_BatalFragment"
         android:label="fragment_bantuan__batal"
         tools:layout="@layout/fragment_bantuan__batal" />
+    <fragment
+        android:id="@+id/tambahObatFragment"
+        android:name="com.kel1.lindungilansia.TambahObatFragment"
+        android:label="fragment_tambah_obat"
+        tools:layout="@layout/fragment_tambah_obat" >
+        <action
+            android:id="@+id/action_tambahObatFragment_to_jadwalObatFragment"
+            app:destination="@id/jadwalObatFragment" />
+    </fragment>
 </navigation>
