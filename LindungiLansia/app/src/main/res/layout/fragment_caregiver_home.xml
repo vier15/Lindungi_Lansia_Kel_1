@@ -55,7 +55,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/clElderCaregiverHome"
+                android:id="@+id/clElderCaregiverHome1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="20dp"
@@ -146,7 +146,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.6"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/clElderCaregiverHome">
+                app:layout_constraintTop_toBottomOf="@+id/clElderCaregiverHome1">
 
                 <ImageView
                     android:id="@+id/ivElderCaregiverHome2"
