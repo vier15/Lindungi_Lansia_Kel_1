@@ -74,62 +74,12 @@
             android:text="Hari"
             android:textColor="@color/pure_white" />
 
-        <LinearLayout
+        <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:orientation="horizontal">
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/pure_white" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/pure_white" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/pure_white" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/pure_white" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/pure_white" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/pure_white" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/pure_white" />
-        </LinearLayout>
+            android:layout_margin="10dp"
+            android:backgroundTint="@color/pure_white"
+            />
 
         <TextView
             android:id="@+id/textView15"

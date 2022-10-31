@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:fontFamily="sans-serif"
-            android:text="Nama Elder"
+            android:text="Himejima Ujang"
             android:textAlignment="center"
             android:textColor="@color/pure_white"
             android:textSize="24sp"
@@ -60,7 +60,7 @@
             android:layout_width="300dp"
             android:layout_height="56dp"
             android:layout_marginTop="36dp"
-            android:background="@drawable/rounder_corner_25"
+            android:background="@drawable/rounded_corner"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvNamaProfilElder">
@@ -107,8 +107,8 @@
             android:layout_width="match_parent"
             android:layout_height="482dp"
             android:layout_marginTop="40dp"
+            android:background="@drawable/rounder_corner_25"
             android:padding="20dp"
-            android:background="@drawable/rounded_corner"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.513"
             app:layout_constraintStart_toStartOf="parent"
@@ -328,18 +328,6 @@
                     app:layout_constraintStart_toEndOf="@+id/div3DataProfilElder2"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <TextView
-                android:id="@+id/tvRekamMedisProfilElder"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:text="Rekam Medis"
-                android:textColor="@color/primary_blue"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cl3DataProfilElder" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

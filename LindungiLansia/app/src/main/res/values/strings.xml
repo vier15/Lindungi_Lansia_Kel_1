@@ -2,4 +2,19 @@
     <string name="app_name">Lindungi Lansia</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="hari">
+        <item>Senin</item>
+        <item>Selasa</item>
+        <item>Rabu</item>
+        <item>Kamis</item>
+        <item>Jumat</item>
+        <item>Sabtu</item>
+        <item>Minggu</item>
+    </string-array>
+
+    <string-array name="tipeObat">
+        <item>Obat Luar</item>
+        <item>Selasa</item>
+    </string-array>
 </resources>
