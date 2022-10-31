@@ -3,10 +3,12 @@ package com.kel1.lindungilansia;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -58,7 +60,26 @@ public class ElderSuntingProfilFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_elder_sunting_profil, container, false);
+        View view = inflater.inflate(R.layout.fragment_elder_sunting_profil, container, false);
+
+        // Navigasi tombol simpan ke profil elder
+        Button btnSimpanSuntingProfilElder = view.findViewById(R.id.btnSimpanSuntingProfilElder);
+        btnSimpanSuntingProfilElder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_elderSuntingProfilFragment_to_profilElderFragment);
+            }
+        });
+
+        // Navigasi tombol kembali ke profil elder
+        Button btnKembaliSuntingProfilElder = view.findViewById(R.id.btnKembaliSuntingProfilElder);
+        btnKembaliSuntingProfilElder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_elderSuntingProfilFragment_to_profilElderFragment);
+            }
+        });
+
+        return view;
     }
 }

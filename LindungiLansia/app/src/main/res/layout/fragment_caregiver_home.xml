@@ -66,7 +66,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/ivSwipeListElderCaregiverHome">
 
                 <ImageView
-                    android:id="@+id/imgTeleponElderCaregiverHome"
+                    android:id="@+id/ivTeleponElderCaregiverHome"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
@@ -108,8 +108,8 @@
                     android:text="08123456789"
                     android:textColor="@color/primary_blue"
                     android:textSize="16sp"
-                    app:layout_constraintStart_toEndOf="@+id/imgTeleponElderCaregiverHome"
-                    app:layout_constraintTop_toTopOf="@+id/imgTeleponElderCaregiverHome" />
+                    app:layout_constraintStart_toEndOf="@+id/ivTeleponElderCaregiverHome"
+                    app:layout_constraintTop_toTopOf="@+id/ivTeleponElderCaregiverHome" />
 
                 <ImageView
                     android:id="@+id/ivElderStatusCaregiverHome"
@@ -128,7 +128,7 @@
                     android:layout_height="wrap_content"
                     android:text="Baik-Baik Saja"
                     android:textColor="@color/primary_blue"
-                    android:textSize="16sp"
+                    android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="@+id/ivElderStatusCaregiverHome"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.183"
@@ -173,7 +173,7 @@
                     app:layout_constraintVertical_bias="0.22" />
 
                 <ImageView
-                    android:id="@+id/imgTeleponElderCaregiverHome2"
+                    android:id="@+id/ivTeleponElderCaregiverHome2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -191,9 +191,9 @@
                     android:text="081834275990"
                     android:textColor="@color/primary_blue"
                     android:textSize="16sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/imgTeleponElderCaregiverHome2"
-                    app:layout_constraintStart_toEndOf="@+id/imgTeleponElderCaregiverHome2"
-                    app:layout_constraintTop_toTopOf="@+id/imgTeleponElderCaregiverHome2"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivTeleponElderCaregiverHome2"
+                    app:layout_constraintStart_toEndOf="@+id/ivTeleponElderCaregiverHome2"
+                    app:layout_constraintTop_toTopOf="@+id/ivTeleponElderCaregiverHome2"
                     app:layout_constraintVertical_bias="1.0" />
 
                 <TextView
@@ -202,7 +202,7 @@
                     android:layout_height="wrap_content"
                     android:text="Butuh Bantuan"
                     android:textColor="@color/soft_red"
-                    android:textSize="16sp"
+                    android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView21"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.162"
@@ -224,6 +224,18 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnNavBarCaregiverHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.045"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_round_menu_24" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

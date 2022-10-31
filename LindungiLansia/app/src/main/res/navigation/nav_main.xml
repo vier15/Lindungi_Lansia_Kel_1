@@ -112,7 +112,11 @@
     <fragment
         android:id="@+id/elderSuntingProfilFragment"
         android:name="com.kel1.lindungilansia.ElderSuntingProfilFragment"
-        android:label="ElderSuntingProfilFragment" />
+        android:label="ElderSuntingProfilFragment" >
+        <action
+            android:id="@+id/action_elderSuntingProfilFragment_to_profilElderFragment"
+            app:destination="@id/profilElderFragment" />
+    </fragment>
     <fragment
         android:id="@+id/elderRekamMedisFragment"
         android:name="com.kel1.lindungilansia.ElderRekamMedisFragment"

@@ -71,12 +71,21 @@ public class ProfilElderFragment extends Fragment {
             }
         });
 
-        // Navigasi ke halaman sunting profil elder
+        // Navigasi ke halaman rekam medis
         Button btnRekamMedisElder = view.findViewById(R.id.btnRekamMedisElder);
         btnRekamMedisElder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Navigation.findNavController(view).navigate(R.id.action_profilElderFragment_to_elderRekamMedisFragment);
+            }
+        });
+
+        // Navigasi ke halaman elder home
+        Button btnKembaliProfilElder = view.findViewById(R.id.btnKembaliProfilElder);
+        btnKembaliProfilElder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_profilElderFragment_to_elderHomeFragment);
             }
         });
 

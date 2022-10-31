@@ -63,11 +63,21 @@ public class RoleRegisterFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_role_register, container, false);
 
+        // Navigasi ke halaman elder home
         ImageButton imgBtnElderRegister = view.findViewById(R.id.imgBtnElderRegister);
         imgBtnElderRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Navigation.findNavController(view).navigate(R.id.action_roleRegisterFragment_to_elderHomeFragment);
+            }
+        });
+
+        // Navigasi ke halaman caregiver home
+        ImageButton imgBtnCaregiverRegister = view.findViewById(R.id.imgBtnCaregiverRegister);
+        imgBtnCaregiverRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_roleRegisterFragment_to_caregiverHomeFragment);
             }
         });
 
