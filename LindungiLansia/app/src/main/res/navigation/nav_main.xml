@@ -121,7 +121,11 @@
         android:id="@+id/elderRekamMedisFragment"
         android:name="com.kel1.lindungilansia.ElderRekamMedisFragment"
         android:label="fragment_elder_rekam_medis"
-        tools:layout="@layout/fragment_elder_rekam_medis" />
+        tools:layout="@layout/fragment_elder_rekam_medis" >
+        <action
+            android:id="@+id/action_elderRekamMedisFragment_to_profilElderFragment"
+            app:destination="@id/profilElderFragment" />
+    </fragment>
     <fragment
         android:id="@+id/meminta_BantuanFragment"
         android:name="com.kel1.lindungilansia.Meminta_BantuanFragment"
@@ -138,6 +142,9 @@
         <action
             android:id="@+id/action_caregiverHomeFragment_to_caregiverLihatProfilElderFragment"
             app:destination="@id/caregiverLihatProfilElderFragment" />
+        <action
+            android:id="@+id/action_caregiverHomeFragment_to_notifikasidariElderFragment"
+            app:destination="@id/notifikasidariElderFragment" />
     </fragment>
     <fragment
         android:id="@+id/bantuan_BatalFragment"
@@ -159,6 +166,36 @@
         android:label="CaregiverLihatProfilElderFragment" >
         <action
             android:id="@+id/action_caregiverLihatProfilElderFragment_to_caregiverHomeFragment"
+            app:destination="@id/caregiverHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notifikasidariElderFragment"
+        android:name="com.kel1.lindungilansia.NotifikasidariElderFragment"
+        android:label="fragment_notifikasidari_elder"
+        tools:layout="@layout/fragment_notifikasidari_elder" >
+        <action
+            android:id="@+id/action_notifikasidariElderFragment_to_caregiverBisaBantuElderFragment"
+            app:destination="@id/caregiverBisaBantuElderFragment" />
+        <action
+            android:id="@+id/action_notifikasidariElderFragment_to_caregiverTidakBisaBantuElderFragment"
+            app:destination="@id/caregiverTidakBisaBantuElderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/caregiverBisaBantuElderFragment"
+        android:name="com.kel1.lindungilansia.CaregiverBisaBantuElderFragment"
+        android:label="fragment_caregiver_bisa_bantu_elder"
+        tools:layout="@layout/fragment_caregiver_bisa_bantu_elder" >
+        <action
+            android:id="@+id/action_caregiverBisaBantuElderFragment_to_caregiverHomeFragment"
+            app:destination="@id/caregiverHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/caregiverTidakBisaBantuElderFragment"
+        android:name="com.kel1.lindungilansia.CaregiverTidakBisaBantuElderFragment"
+        android:label="fragment_caregiver_tidak_bisa_bantu_elder"
+        tools:layout="@layout/fragment_caregiver_tidak_bisa_bantu_elder" >
+        <action
+            android:id="@+id/action_caregiverTidakBisaBantuElderFragment_to_caregiverHomeFragment"
             app:destination="@id/caregiverHomeFragment" />
     </fragment>
 </navigation>

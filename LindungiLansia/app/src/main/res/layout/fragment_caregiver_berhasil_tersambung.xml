@@ -11,7 +11,7 @@
     <!-- TODO: Update blank fragment layout -->
 
     <Button
-        android:id="@+id/button11"
+        android:id="@+id/btnTidakBisaBantuNotifikasiDariElder"
         android:layout_width="96dp"
         android:layout_height="57dp"
         android:backgroundTint="@color/background"

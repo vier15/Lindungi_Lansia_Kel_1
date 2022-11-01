@@ -11,7 +11,7 @@
     <!-- TODO: Update blank fragment layout -->
 
     <Button
-        android:id="@+id/button10"
+        android:id="@+id/btnBantuNotifikasiDariElder"
         android:layout_width="138dp"
         android:layout_height="59dp"
         android:backgroundTint="@color/soft_red"
@@ -32,7 +32,7 @@
         tools:fontFamily="@font/sen" />
 
     <Button
-        android:id="@+id/button11"
+        android:id="@+id/btnTidakBisaBantuNotifikasiDariElder"
         android:layout_width="138dp"
         android:layout_height="59dp"
         android:backgroundTint="@color/background"
@@ -90,11 +90,11 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="298dp"
-        android:layout_height="91dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:fontFamily="@font/sen"
-        android:text="Himejima Ujang     BUTUH BANTUAN"
+        android:text="Himejima Ujang BUTUH BANTUAN"
         android:textAlignment="center"
         android:textColor="@color/soft_red"
         android:textSize="34sp"

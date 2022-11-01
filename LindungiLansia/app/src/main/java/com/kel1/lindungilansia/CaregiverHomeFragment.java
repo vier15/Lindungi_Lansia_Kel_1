@@ -9,6 +9,7 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -68,6 +69,15 @@ public class CaregiverHomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Navigation.findNavController(view).navigate(R.id.action_caregiverHomeFragment_to_caregiverLihatProfilElderFragment);
+            }
+        });
+
+        // Navigasi ke demo notifikasi elder butuh bantuan
+        Button btnCaregiverHomeDemoNotifElder = view.findViewById(R.id.btnCaregiverHomeDemoNotifElder);
+        btnCaregiverHomeDemoNotifElder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_caregiverHomeFragment_to_notifikasidariElderFragment);
             }
         });
 
