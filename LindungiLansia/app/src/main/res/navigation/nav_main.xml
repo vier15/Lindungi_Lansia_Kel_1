@@ -167,6 +167,9 @@
         <action
             android:id="@+id/action_caregiverLihatProfilElderFragment_to_caregiverHomeFragment"
             app:destination="@id/caregiverHomeFragment" />
+        <action
+            android:id="@+id/action_caregiverLihatProfilElderFragment_to_caregiverLihatRekamMedisElderFragment"
+            app:destination="@id/caregiverLihatRekamMedisElderFragment" />
     </fragment>
     <fragment
         android:id="@+id/notifikasidariElderFragment"
@@ -197,5 +200,14 @@
         <action
             android:id="@+id/action_caregiverTidakBisaBantuElderFragment_to_caregiverHomeFragment"
             app:destination="@id/caregiverHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/caregiverLihatRekamMedisElderFragment"
+        android:name="com.kel1.lindungilansia.CaregiverLihatRekamMedisElderFragment"
+        android:label="fragment_caregiver_lihat_rekam_medis_elder"
+        tools:layout="@layout/fragment_caregiver_lihat_rekam_medis_elder" >
+        <action
+            android:id="@+id/action_caregiverLihatRekamMedisElderFragment_to_caregiverLihatProfilElderFragment"
+            app:destination="@id/caregiverLihatProfilElderFragment" />
     </fragment>
 </navigation>

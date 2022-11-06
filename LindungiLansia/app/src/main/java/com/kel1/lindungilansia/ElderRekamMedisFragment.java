@@ -62,7 +62,7 @@ public class ElderRekamMedisFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_elder_rekam_medis, container, false);
 
-        Button btnKembaliElderRekamMedis = view.findViewById(R.id.btnKembaliElderRekamMedis);
+        Button btnKembaliElderRekamMedis = view.findViewById(R.id.btnElderRekamMedisButtonKembali);
         btnKembaliElderRekamMedis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
