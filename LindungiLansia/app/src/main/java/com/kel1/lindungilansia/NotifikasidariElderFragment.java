@@ -5,10 +5,12 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import android.os.CountDownTimer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -81,5 +83,24 @@ public class NotifikasidariElderFragment extends Fragment {
         });
 
         return view;
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState){
+        super.onViewCreated(view, savedInstanceState);
+
+        // Countdown timer untuk notifikasi dari elder
+        TextView tvCountdownNotifikasiDariElder = view.findViewById(R.id.tvCountdownNotifikasiDariElder);
+        new CountDownTimer(30000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                tvCountdownNotifikasiDariElder.setText(String.valueOf(millisUntilFinished / 1000));
+            }
+
+            public void onFinish() {
+//                tvCountdownNotifikasiDariElder.setText("0");
+                Navigation.findNavController(view).navigate(R.id.action_notifikasidariElderFragment_to_caregiverTidakBisaBantuElderFragment);
+            }
+        }.start();
     }
 }
