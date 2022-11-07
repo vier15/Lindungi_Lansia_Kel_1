@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/elderRekamMedisFragment"
+        android:icon="@drawable/ic_baseline_person_outline_24"
+        android:title="Rekam Medis" />
+
+    <item
+        android:id="@+id/linkWithCaregiverFragment"
+        android:icon="@drawable/ic_outline_add_reaction_24"
+        android:title="Sambungkan dengan Caregiver" />
+
+    <item
+        android:id="@+id/jadwalObatFragment"
+        android:icon="@drawable/ic_outline_calendar_month_24"
+        android:title="Jadwal Obat" />
+</menu>

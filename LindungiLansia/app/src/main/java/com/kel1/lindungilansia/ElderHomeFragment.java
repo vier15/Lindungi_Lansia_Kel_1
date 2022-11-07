@@ -2,8 +2,12 @@ package com.kel1.lindungilansia;
 
 import android.os.Bundle;
 
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.navigation.NavigationView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -64,23 +69,45 @@ public class ElderHomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_elder_home, container, false);
 
+        final DrawerLayout drawerLayout = view.findViewById(R.id.elderHomeLayout);
+
         // Navigasi ke navbar
         FloatingActionButton btnNavBar = view.findViewById(R.id.btnNavBar);
         btnNavBar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.action_elderHomeFragment_to_navBarFragment);
+                drawerLayout.openDrawer(GravityCompat.START);
             }
         });
 
         // Navigasi ke navbar
-        Button btnElderHomeButuhBantuan = view.findViewById(R.id.btnElderHomeButuhBantuan);
+//        FloatingActionButton btnNavBar = view.findViewById(R.id.btnNavBar);
+//        btnNavBar.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Navigation.findNavController(view).navigate(R.id.action_elderHomeFragment_to_navBarFragment);
+//            }
+//        });
+
+        // Navigasi butuh bantuan
+//        Button btnElderHomeButuhBantuan = view.findViewById(R.id.btnElderHomeButuhBantuan);
+//        btnElderHomeButuhBantuan.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Navigation.findNavController(view).navigate(R.id.action_elderHomeFragment_to_meminta_BantuanFragment);
+//            }
+//        });
+        NavigationView navigationView = view.findViewById(R.id.nvElderHomeSidebar);
+        navigationView.setItemIconTintList(null);
+
+        NavController navController = Navigation.findNavController(MainActivity, R.id.fragmentContainerView);
+        NavigationUI.setupWithNavController(navigationView, navController);
+
+        Button btnElderHomeButuhBantuan = view.findViewById(R.id.elderRekamMedisFragment);
         btnElderHomeButuhBantuan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Navigation.findNavController(view).navigate(R.id.action_elderHomeFragment_to_meminta_BantuanFragment);
-            }
-        });
 
         return view;
     }
