@@ -97,17 +97,11 @@ public class ElderHomeFragment extends Fragment {
 //                Navigation.findNavController(view).navigate(R.id.action_elderHomeFragment_to_meminta_BantuanFragment);
 //            }
 //        });
-        NavigationView navigationView = view.findViewById(R.id.nvElderHomeSidebar);
-        navigationView.setItemIconTintList(null);
-
-        NavController navController = Navigation.findNavController(MainActivity, R.id.fragmentContainerView);
-        NavigationUI.setupWithNavController(navigationView, navController);
-
-        Button btnElderHomeButuhBantuan = view.findViewById(R.id.elderRekamMedisFragment);
-        btnElderHomeButuhBantuan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.action_elderHomeFragment_to_meminta_BantuanFragment);
+//        NavigationView navigationView = view.findViewById(R.id.nvElderHomeSidebar);
+////        navigationView.setItemIconTintList(null);
+////
+////        NavController navController = Navigation.findNavController(MainActivity, R.id.fragmentContainerView);
+////        NavigationUI.setupWithNavController(navigationView, navController);
 
         return view;
     }
