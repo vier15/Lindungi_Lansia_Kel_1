@@ -99,7 +99,7 @@ public class NotifikasidariElderFragment extends Fragment {
             }
 
             public void onFinish() {
-//                tvCountdownNotifikasiDariElder.setText("0");
+                // Jika countdown selesai, pindah ke halaman caregiver tidak bisa bantu elder
                 Navigation.findNavController(view).navigate(R.id.action_notifikasidariElderFragment_to_caregiverTidakBisaBantuElderFragment);
             }
         }.start();
