@@ -90,7 +90,8 @@ public class NotifikasidariElderFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         // Countdown timer untuk notifikasi dari elder
-        TextView tvCountdownNotifikasiDariElder = view.findViewById(R.id.tvCountdownNotifikasiDariElder);
+        TextView tvCountdownNotifikasiDariElder = view.findViewById(R.id.tvCaregiverMelihatJadwalObatElderNamaElder);
+
         new CountDownTimer(30000, 1000) {
 
             public void onTick(long millisUntilFinished) {

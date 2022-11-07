@@ -53,7 +53,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
-        android:id="@+id/tvCountdownNotifikasiDariElder"
+        android:id="@+id/tvCaregiverMelihatJadwalObatElderNamaElder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="104dp"
@@ -72,9 +72,9 @@
         android:layout_height="53dp"
         android:scrollbarSize="20dp"
         android:src="@drawable/ic_round_alarm_24"
-        app:layout_constraintBottom_toBottomOf="@+id/tvCountdownNotifikasiDariElder"
-        app:layout_constraintStart_toEndOf="@+id/tvCountdownNotifikasiDariElder"
-        app:layout_constraintTop_toTopOf="@+id/tvCountdownNotifikasiDariElder"
+        app:layout_constraintBottom_toBottomOf="@+id/tvCaregiverMelihatJadwalObatElderNamaElder"
+        app:layout_constraintStart_toEndOf="@+id/tvCaregiverMelihatJadwalObatElderNamaElder"
+        app:layout_constraintTop_toTopOf="@+id/tvCaregiverMelihatJadwalObatElderNamaElder"
         app:tint="@color/soft_red" />
 
     <ImageView
@@ -86,7 +86,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvCountdownNotifikasiDariElder" />
+        app:layout_constraintTop_toBottomOf="@+id/tvCaregiverMelihatJadwalObatElderNamaElder" />
 
     <TextView
         android:id="@+id/textView4"
