@@ -23,6 +23,8 @@ public class RegisterFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
+    private DbUser dbuser;
+
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -63,16 +65,11 @@ public class RegisterFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_register, container, false);
 
+        dbuser = new DbUser(getActivity().getApplicationContext());
+        dbuser.open();
+
         Button btnDaftarRegister = view.findViewById(R.id.btnDaftarRegister);
         btnDaftarRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.action_registerFragment_to_roleRegisterFragment);
-            }
-        });
-
-        Button btnBatalRegister = view.findViewById(R.id.btnBatalRegister);
-        btnBatalRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TextView etNamaRegister = view.findViewById(R.id.etNamaRegister);
@@ -90,8 +87,21 @@ public class RegisterFragment extends Fragment {
                     etPassRegister.setError("Password masih kosong");
                 }
                 else {
-                    Navigation.findNavController(view).navigate(R.id.action_registerFragment_to_loginFragment);
+                    // Simpan data ke database
+                    String nama = etNamaRegister.getText().toString();
+                    String email = etEmailRegister.getText().toString();
+                    String pass = etPassRegister.getText().toString();
+                    dbuser.insertUser(nama, "",email, pass, "");
+                    Navigation.findNavController(view).navigate(R.id.action_registerFragment_to_roleRegisterFragment);
                 }
+            }
+        });
+
+        Button btnBatalRegister = view.findViewById(R.id.btnBatalRegister);
+        btnBatalRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_registerFragment_to_loginFragment);
             }
         });
 

@@ -67,7 +67,7 @@ public class LoginFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_login, container, false);
 
-//        ListItemBinding binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false);
+        Login binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false);
 //        model = new ViewModelProvider(this).get(UserViewModel.class);
 //        binding.getLifecycle();
 //        binding.setViewmodel(model);
