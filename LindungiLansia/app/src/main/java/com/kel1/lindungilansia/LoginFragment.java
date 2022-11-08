@@ -2,13 +2,16 @@ package com.kel1.lindungilansia;
 
 import android.os.Bundle;
 
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +19,8 @@ import android.widget.Button;
  * create an instance of this fragment.
  */
 public class LoginFragment extends Fragment {
+
+    private UserViewModel model;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -62,6 +67,12 @@ public class LoginFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_login, container, false);
 
+//        ListItemBinding binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false);
+//        model = new ViewModelProvider(this).get(UserViewModel.class);
+//        binding.getLifecycle();
+//        binding.setViewmodel(model);
+
+
         Button btnDaftarLogin = view.findViewById(R.id.btnDaftarLogin);
         btnDaftarLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,7 +85,21 @@ public class LoginFragment extends Fragment {
         btnMasukLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_elderHomeFragment);
+                EditText etEmailLogin = view.findViewById(R.id.etEmailLogin);
+                EditText etPassLogin = view.findViewById(R.id.etPassLogin);
+
+                // Validasi jika ada field text yang belum diisi
+                if (etEmailLogin.getText().toString().length() == 0){
+                    etEmailLogin.setError("Email masih kosong");
+                }
+                else if ((etPassLogin.getText().toString().length() == 0)){
+                    etPassLogin.setError("Email masih kosong");
+                }
+                else {
+                    // Mengambil data email
+
+                    Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_elderHomeFragment);
+                }
             }
         });
 

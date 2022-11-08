@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -74,7 +75,23 @@ public class RegisterFragment extends Fragment {
         btnBatalRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.action_registerFragment_to_loginFragment);
+                TextView etNamaRegister = view.findViewById(R.id.etNamaRegister);
+                TextView etEmailRegister = view.findViewById(R.id.etEmailRegister);
+                TextView etPassRegister = view.findViewById(R.id.etPassRegister);
+
+                // Validasi text field yang masih kosong
+                if (etNamaRegister.getText().toString().length() == 0) {
+                    etNamaRegister.setError("Nama masih kosong");
+                }
+                else if (etEmailRegister.getText().toString().length() == 0) {
+                    etEmailRegister.setError("Email masih kosong");
+                }
+                else if (etPassRegister.getText().toString().length() == 0) {
+                    etPassRegister.setError("Password masih kosong");
+                }
+                else {
+                    Navigation.findNavController(view).navigate(R.id.action_registerFragment_to_loginFragment);
+                }
             }
         });
 

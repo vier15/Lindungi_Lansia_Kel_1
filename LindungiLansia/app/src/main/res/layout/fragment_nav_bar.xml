@@ -105,7 +105,7 @@
             <TextView
                 android:id="@+id/tvLinkCaregiver"
                 android:layout_width="133dp"
-                android:layout_height="31dp"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/sen"
                 android:text="Sambungkan dengan Caregiver"
                 android:textColor="@color/jet_black"

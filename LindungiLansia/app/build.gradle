@@ -6,6 +6,10 @@ android {
     namespace 'com.kel1.lindungilansia'
     compileSdk 32
 
+    buildFeatures {
+        dataBinding true
+    }
+
     defaultConfig {
         applicationId "com.kel1.lindungilansia"
         minSdk 21
