@@ -69,7 +69,7 @@ public class ElderHomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_elder_home, container, false);
 
-        final DrawerLayout drawerLayout = view.findViewById(R.id.elderHomeLayout);
+        DrawerLayout drawerLayout = getActivity().findViewById(R.id.drawerLayout);
 
         // Navigasi ke navbar
         FloatingActionButton btnNavBar = view.findViewById(R.id.btnNavBar);
@@ -90,13 +90,13 @@ public class ElderHomeFragment extends Fragment {
 //        });
 
         // Navigasi butuh bantuan
-//        Button btnElderHomeButuhBantuan = view.findViewById(R.id.btnElderHomeButuhBantuan);
-//        btnElderHomeButuhBantuan.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Navigation.findNavController(view).navigate(R.id.action_elderHomeFragment_to_meminta_BantuanFragment);
-//            }
-//        });
+        Button btnElderHomeButuhBantuan = view.findViewById(R.id.btnElderHomeButuhBantuan);
+        btnElderHomeButuhBantuan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_elderHomeFragment_to_meminta_BantuanFragment);
+            }
+        });
 //        NavigationView navigationView = view.findViewById(R.id.nvElderHomeSidebar);
 ////        navigationView.setItemIconTintList(null);
 ////

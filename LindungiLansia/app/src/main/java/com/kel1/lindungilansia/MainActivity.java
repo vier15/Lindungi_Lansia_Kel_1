@@ -1,10 +1,16 @@
 package com.kel1.lindungilansia;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,6 +22,15 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         dbUser = new DbUser(getApplicationContext());
         dbUser.open();
+
+        DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
+        drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+
+        NavigationView navigationView = findViewById(R.id.nvElderHomeSidebar);
+        navigationView.setItemIconTintList(null);
+//
+//        NavController navController = Navigation.findNavController(this, R.id.navhost_main);
+//        NavigationUI.setupWithNavController(navigationView, navController);
     }
 
     @Override
