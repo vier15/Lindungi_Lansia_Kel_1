@@ -52,6 +52,9 @@
         <action
             android:id="@+id/action_elderHomeFragment_to_meminta_BantuanFragment"
             app:destination="@id/meminta_BantuanFragment" />
+        <action
+            android:id="@+id/action_elderHomeFragment_to_elderMapsPositionFragment"
+            app:destination="@id/elderMapsPositionFragment" />
     </fragment>
     <fragment
         android:id="@+id/navBarFragment"
@@ -209,5 +212,14 @@
         <action
             android:id="@+id/action_caregiverLihatRekamMedisElderFragment_to_caregiverLihatProfilElderFragment"
             app:destination="@id/caregiverLihatProfilElderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/elderMapsPositionFragment"
+        android:name="com.kel1.lindungilansia.ElderMapsPositionFragment"
+        android:label="fragment_elder_maps_position"
+        tools:layout="@layout/fragment_elder_maps_position" >
+        <action
+            android:id="@+id/action_elderMapsPositionFragment_to_elderHomeFragment2"
+            app:destination="@id/elderHomeFragment" />
     </fragment>
 </navigation>
