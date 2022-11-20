@@ -105,6 +105,7 @@ public class RegisterFragment extends Fragment {
             }
         });
 
+        dbuser.close();
         return view;
     }
 }

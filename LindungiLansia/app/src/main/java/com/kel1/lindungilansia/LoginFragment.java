@@ -1,5 +1,7 @@
 package com.kel1.lindungilansia;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 //import androidx.databinding.DataBindingUtil;
@@ -7,11 +9,13 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -20,7 +24,7 @@ import android.widget.EditText;
  */
 public class LoginFragment extends Fragment {
 
-    private UserViewModel model;
+    private DbUser dbuser;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -67,6 +71,14 @@ public class LoginFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_login, container, false);
 
+        // Buat shared preferences
+        SharedPreferences sp = getActivity().getSharedPreferences("com.kel1.lindungilansia.sp", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+
+        // Membuka database
+        dbuser = new DbUser(getActivity().getApplicationContext());
+        dbuser.open();
+
 //        Login binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false);
 //        model = new ViewModelProvider(this).get(UserViewModel.class);
 //        binding.getLifecycle();
@@ -93,12 +105,31 @@ public class LoginFragment extends Fragment {
                     etEmailLogin.setError("Email masih kosong");
                 }
                 else if ((etPassLogin.getText().toString().length() == 0)){
-                    etPassLogin.setError("Email masih kosong");
+                    etPassLogin.setError("Password masih kosong");
                 }
                 else {
                     // Mengambil data email
+                    String loginEmail = etEmailLogin.getText().toString();
+                    String loginPass = etPassLogin.getText().toString();
 
-                    Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_elderHomeFragment);
+                    // Ambil data login dari database
+                    DbUser.User usr = dbuser.getUserLogin(loginEmail, loginPass);
+
+                    // jika validasi berhasil
+                    if(usr.nama != null){
+                        // simpan data user di viewmodel
+
+                        editor.putString("email", usr.email);
+                        editor.putString("pass", usr.password);
+                        editor.commit();
+
+                        // pindah ke halaman home
+                        Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_elderHomeFragment);
+                    }
+                    // jika validasi gagal
+                    else{
+                        Toast.makeText(getActivity(), "Email atau password salah", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });

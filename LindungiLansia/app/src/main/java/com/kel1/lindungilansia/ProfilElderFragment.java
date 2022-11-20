@@ -1,5 +1,7 @@
 package com.kel1.lindungilansia;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +19,9 @@ import android.widget.Button;
  * create an instance of this fragment.
  */
 public class ProfilElderFragment extends Fragment {
+
+    private DbUser dbuser;
+    private CaregiverViewModel model;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -62,6 +68,29 @@ public class ProfilElderFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profil_elder, container, false);
 
+        // Shared preferences
+        SharedPreferences sp = getActivity().getSharedPreferences("com.kel1.lindungilansia.sp", Context.MODE_PRIVATE);
+
+        // Membuka database
+        dbuser = new DbUser(getActivity().getApplicationContext());
+        dbuser.open();
+
+        model = new CaregiverViewModel();
+        TextView tvNamaProfilElder = view.findViewById(R.id.tvNamaProfilElder);
+        TextView tvEmailProfilElder = view.findViewById(R.id.tvEmailProfilElder);
+
+        // Ambil data user yang login dari database
+        String loginEmail = sp.getString("email", "");
+        String loginPass = sp.getString("pass", "");
+        DbUser.User usr = dbuser.getUserLogin(loginEmail, loginPass);
+
+        // Ubah data viewmodel caregiver
+        model.setNama(usr.nama);
+        model.setEmail(usr.email);
+
+        tvNamaProfilElder.setText(model.getNama());
+        tvEmailProfilElder.setText(model.getEmail());
+
         // Navigasi ke halaman sunting profil elder
         Button btnSuntingProfilElder = view.findViewById(R.id.btnSuntingProfilElder);
         btnSuntingProfilElder.setOnClickListener(new View.OnClickListener() {
@@ -89,6 +118,7 @@ public class ProfilElderFragment extends Fragment {
             }
         });
 
+        dbuser.close();
         return view;
     }
 }

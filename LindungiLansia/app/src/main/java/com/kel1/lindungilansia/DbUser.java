@@ -68,5 +68,30 @@ public class DbUser {
         return M;
     }
 
+    //ambil data user berdasarkan email dan password
+    public User getUserLogin(String email, String pass) {
+        Cursor cur = null;
+        User M = new User();
+
+        //kolom yang diambil
+        String[] cols = new String [] {"ID", "NAMA", "TELEPON", "EMAIL", "PASSWORD", "TANGGAL_LAHIR"};
+        //parameter, akan mengganti ? pada NAMA=?
+        String[] param  = {email, pass};
+
+        //cursor
+        cur = db.query("USER",cols,"EMAIL=? AND PASSWORD=?",param,null,null,null);
+
+        if (cur.getCount()>0) {  //ada data? ambil
+            cur.moveToFirst();
+            M.nama = cur.getString(1);
+            M.telepon = cur.getString(2);
+            M.email = cur.getString(3);
+            M.password = cur.getString(4);
+            M.tanggal_lahir = cur.getString(5);
+        }
+        cur.close();
+        return M;
+    }
+
 }
 
