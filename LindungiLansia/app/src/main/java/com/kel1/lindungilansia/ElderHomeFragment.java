@@ -97,6 +97,14 @@ public class ElderHomeFragment extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.action_elderHomeFragment_to_meminta_BantuanFragment);
             }
         });
+
+        Button Button_maps_demo = view.findViewById(R.id.Button_maps_demo);
+        Button_maps_demo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_elderHomeFragment_to_elderMapsPositionFragment);
+            }
+        });
 //        NavigationView navigationView = view.findViewById(R.id.nvElderHomeSidebar);
 ////        navigationView.setItemIconTintList(null);
 ////
