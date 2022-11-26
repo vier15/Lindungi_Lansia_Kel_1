@@ -7,10 +7,6 @@ android {
     namespace 'com.kel1.lindungilansia'
     compileSdk 32
 
-    buildFeatures {
-        dataBinding true
-    }
-
     defaultConfig {
         applicationId "com.kel1.lindungilansia"
         minSdk 21
@@ -31,6 +27,11 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    buildFeatures {
+        dataBinding true
+    }
+
 }
 
 dependencies {

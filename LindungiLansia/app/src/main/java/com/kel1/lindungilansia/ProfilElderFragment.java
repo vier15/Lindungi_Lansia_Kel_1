@@ -4,7 +4,9 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
@@ -12,6 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.kel1.lindungilansia.databinding.FragmentProfilElderBinding;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -66,7 +70,13 @@ public class ProfilElderFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_profil_elder, container, false);
+
+        // Data binding
+        FragmentProfilElderBinding binding = DataBindingUtil.inflate(inflater, R.layout.fragment_profil_elder, container, false);
+        View view = binding.getRoot();
+        model = new CaregiverViewModel();
+        binding.setLifecycleOwner(getViewLifecycleOwner());
+        binding.setCaregivermodel(model);
 
         // Shared preferences
         SharedPreferences sp = getActivity().getSharedPreferences("com.kel1.lindungilansia.sp", Context.MODE_PRIVATE);
@@ -75,7 +85,7 @@ public class ProfilElderFragment extends Fragment {
         dbuser = new DbUser(getActivity().getApplicationContext());
         dbuser.open();
 
-        model = new CaregiverViewModel();
+        // Ambil text view
         TextView tvNamaProfilElder = view.findViewById(R.id.tvNamaProfilElder);
         TextView tvEmailProfilElder = view.findViewById(R.id.tvEmailProfilElder);
 
@@ -87,9 +97,6 @@ public class ProfilElderFragment extends Fragment {
         // Ubah data viewmodel caregiver
         model.setNama(usr.nama);
         model.setEmail(usr.email);
-
-        tvNamaProfilElder.setText(model.getNama());
-        tvEmailProfilElder.setText(model.getEmail());
 
         // Navigasi ke halaman sunting profil elder
         Button btnSuntingProfilElder = view.findViewById(R.id.btnSuntingProfilElder);
@@ -118,7 +125,12 @@ public class ProfilElderFragment extends Fragment {
             }
         });
 
-        dbuser.close();
         return view;
+    }
+
+    @Override
+    public void onDestroy(){
+        dbuser.close();
+        super.onDestroy();
     }
 }

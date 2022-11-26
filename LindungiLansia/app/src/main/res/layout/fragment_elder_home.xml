@@ -63,4 +63,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023" />
+
+    <Button
+        android:id="@+id/btnKeProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Profil"
+        app:layout_constraintEnd_toEndOf="@+id/Button_maps_demo"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/Button_maps_demo"
+        app:layout_constraintTop_toBottomOf="@+id/Button_maps_demo" />
 </androidx.constraintlayout.widget.ConstraintLayout>

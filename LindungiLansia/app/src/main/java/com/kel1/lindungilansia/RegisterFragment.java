@@ -1,5 +1,7 @@
 package com.kel1.lindungilansia;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -65,8 +67,13 @@ public class RegisterFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_register, container, false);
 
+        // Membuka database
         dbuser = new DbUser(getActivity().getApplicationContext());
         dbuser.open();
+
+        // Membuka shared preferences
+        SharedPreferences sp = getActivity().getSharedPreferences("com.kel1.lindungilansia.sp", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
 
         Button btnDaftarRegister = view.findViewById(R.id.btnDaftarRegister);
         btnDaftarRegister.setOnClickListener(new View.OnClickListener() {
@@ -92,6 +99,16 @@ public class RegisterFragment extends Fragment {
                     String email = etEmailRegister.getText().toString();
                     String pass = etPassRegister.getText().toString();
                     dbuser.insertUser(nama, "",email, pass, "");
+
+                    // Ambil data login dari database
+                    DbUser.User usr = dbuser.getUserLogin(email, pass);
+
+                    // simpan data user di shared preferences
+
+                    editor.putString("email", usr.email);
+                    editor.putString("pass", usr.password);
+                    editor.commit();
+
                     Navigation.findNavController(view).navigate(R.id.action_registerFragment_to_roleRegisterFragment);
                 }
             }
@@ -105,7 +122,12 @@ public class RegisterFragment extends Fragment {
             }
         });
 
-        dbuser.close();
         return view;
+    }
+
+    @Override
+    public void onDestroy(){
+        dbuser.close();
+        super.onDestroy();
     }
 }

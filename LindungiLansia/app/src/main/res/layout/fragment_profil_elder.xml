@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="caregivermodel"
+            type="com.kel1.lindungilansia.CaregiverViewModel" />
+    </data>
+
+<ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primary_blue">
@@ -46,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:fontFamily="sans-serif"
-            android:text="Himejima Ujang"
+            android:text="@{caregivermodel.nama}"
             android:textAlignment="center"
             android:textColor="@color/pure_white"
             android:textSize="24sp"
@@ -192,7 +200,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="8dp"
-                android:text="contoh@email.com"
+                android:text="@{caregivermodel.email}"
                 android:textColor="@color/jet_black"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -335,3 +343,4 @@
 
 </ScrollView>
 
+</layout>

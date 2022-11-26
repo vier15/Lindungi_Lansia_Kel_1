@@ -117,7 +117,7 @@ public class LoginFragment extends Fragment {
 
                     // jika validasi berhasil
                     if(usr.nama != null){
-                        // simpan data user di viewmodel
+                        // simpan data user di shared preferences
 
                         editor.putString("email", usr.email);
                         editor.putString("pass", usr.password);
@@ -135,5 +135,11 @@ public class LoginFragment extends Fragment {
         });
 
         return view;
+    }
+
+    @Override
+    public void onDestroy(){
+        dbuser.close();
+        super.onDestroy();
     }
 }
