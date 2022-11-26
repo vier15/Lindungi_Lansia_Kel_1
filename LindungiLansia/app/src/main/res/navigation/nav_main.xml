@@ -153,7 +153,11 @@
         android:id="@+id/bantuan_BatalFragment"
         android:name="com.kel1.lindungilansia.Bantuan_BatalFragment"
         android:label="fragment_bantuan__batal"
-        tools:layout="@layout/fragment_bantuan__batal" />
+        tools:layout="@layout/fragment_bantuan__batal" >
+        <action
+            android:id="@+id/action_bantuan_BatalFragment_to_elderHomeFragment"
+            app:destination="@id/elderHomeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/tambahObatFragment"
         android:name="com.kel1.lindungilansia.TambahObatFragment"
