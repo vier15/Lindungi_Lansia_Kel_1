@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="caregivermodel"
+            type="com.kel1.lindungilansia.CaregiverViewModel" />
+    </data>
+
+<ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background">
@@ -28,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Nibutani Maman"
+            android:text="@{caregivermodel.nama}"
             android:textColor="@color/primary_blue"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -252,3 +260,4 @@
 
 </ScrollView>
 
+</layout>

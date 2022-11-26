@@ -10,7 +10,7 @@ public class OpenHelper extends SQLiteOpenHelper {
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "dbLindungiLansia.db";
     public static final String TABLE_CREATE =
-            "CREATE TABLE USER (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAMA TEXT, TELEPON  TEXT, EMAIL TEXT, PASSWORD TEXT, TANGGAL_LAHIR DATE)";
+            "CREATE TABLE USER (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAMA TEXT, TELEPON  TEXT, EMAIL TEXT, PASSWORD TEXT, TANGGAL_LAHIR DATE, ROLE TEXT)";
 
     public OpenHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

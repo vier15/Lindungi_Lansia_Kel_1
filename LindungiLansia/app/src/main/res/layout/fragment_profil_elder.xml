@@ -6,7 +6,7 @@
 
     <data>
         <variable
-            name="caregivermodel"
+            name="eldermodel"
             type="com.kel1.lindungilansia.CaregiverViewModel" />
     </data>
 
@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:fontFamily="sans-serif"
-            android:text="@{caregivermodel.nama}"
+            android:text="@{eldermodel.nama}"
             android:textAlignment="center"
             android:textColor="@color/pure_white"
             android:textSize="24sp"
@@ -200,7 +200,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="8dp"
-                android:text="@{caregivermodel.email}"
+                android:text="@{eldermodel.email}"
                 android:textColor="@color/jet_black"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"

@@ -98,15 +98,15 @@ public class RegisterFragment extends Fragment {
                     String nama = etNamaRegister.getText().toString();
                     String email = etEmailRegister.getText().toString();
                     String pass = etPassRegister.getText().toString();
-                    dbuser.insertUser(nama, "",email, pass, "");
+                    dbuser.insertUser(nama, "",email, pass, "", "");
 
                     // Ambil data login dari database
                     DbUser.User usr = dbuser.getUserLogin(email, pass);
 
                     // simpan data user di shared preferences
-
+                    editor.putInt("id", usr.id);
                     editor.putString("email", usr.email);
-                    editor.putString("pass", usr.password);
+//                    editor.putString("pass", usr.password);
                     editor.commit();
 
                     Navigation.findNavController(view).navigate(R.id.action_registerFragment_to_roleRegisterFragment);

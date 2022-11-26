@@ -11,11 +11,13 @@ public class DbUser {
 
     //class untuk menyimpan record
     public static class User {
+        public int id;
         public String nama;
         public String telepon;
         public String email;
         public String password;
         public String tanggal_lahir;
+        public String role;
     }
 
     private SQLiteDatabase db;
@@ -33,36 +35,49 @@ public class DbUser {
         db.close();
     }
 
-    public long insertUser(String nama, String noTelp, String email, String password, String tanggal_lahir) {
+    public long insertUser(String nama, String noTelp, String email, String password, String tanggal_lahir, String role) {
         ContentValues newValues = new ContentValues();
         newValues.put("NAMA", nama);
         newValues.put("TELEPON", noTelp);
         newValues.put("EMAIL", email);
         newValues.put("PASSWORD", password);
         newValues.put("TANGGAL_LAHIR", String.valueOf(tanggal_lahir));
+        newValues.put("ROLE", role);
         return db.insert("USER", null, newValues);
     }
 
-    //ambil data user berdasarkan nama
-    public User getUser(String nama) {
+    public long updateRoleUser(String role, int id, String email){
+        String table = "USER";
+        ContentValues values = new ContentValues();
+        values.put("ROLE", role);
+        String whereClause = "ID=? AND EMAIL=?";
+        String[] whereArgs = {Integer.toString(id), email};
+
+        return db.update(table, values, whereClause, whereArgs);
+    }
+
+    //ambil data user berdasarkan id dan email
+    public User getUser(int id, String email) {
         Cursor cur = null;
         User M = new User();
 
         //kolom yang diambil
-        String[] cols = new String [] {"ID", "NAMA", "TELEPON", "EMAIL", "PASSWORD", "TANGGAL_LAHIR"};
+        String[] cols = new String [] {"ID", "NAMA", "TELEPON", "EMAIL", "PASSWORD", "TANGGAL_LAHIR", "ROLE"};
         //parameter, akan mengganti ? pada NAMA=?
-        String[] param  = {nama};
+        String[] param  = {Integer.toString(id), email};
 
         //cursor
-        cur = db.query("USER",cols,"NAMA=?",param,null,null,null);
+        cur = db.query("USER",cols,"ID=? AND EMAIL=?",param,null,null,null);
 
         if (cur.getCount()>0) {  //ada data? ambil
             cur.moveToFirst();
+            M.id = cur.getInt(0);
             M.nama = cur.getString(1);
             M.telepon = cur.getString(2);
             M.email = cur.getString(3);
             M.password = cur.getString(4);
             M.tanggal_lahir = cur.getString(5);
+            M.role = cur.getString(6);
         }
         cur.close();
         return M;
@@ -74,7 +89,7 @@ public class DbUser {
         User M = new User();
 
         //kolom yang diambil
-        String[] cols = new String [] {"ID", "NAMA", "TELEPON", "EMAIL", "PASSWORD", "TANGGAL_LAHIR"};
+        String[] cols = new String [] {"ID", "NAMA", "TELEPON", "EMAIL", "PASSWORD", "TANGGAL_LAHIR", "ROLE"};
         //parameter, akan mengganti ? pada NAMA=?
         String[] param  = {email, pass};
 
@@ -83,11 +98,13 @@ public class DbUser {
 
         if (cur.getCount()>0) {  //ada data? ambil
             cur.moveToFirst();
+            M.id = cur.getInt(0);
             M.nama = cur.getString(1);
             M.telepon = cur.getString(2);
             M.email = cur.getString(3);
             M.password = cur.getString(4);
             M.tanggal_lahir = cur.getString(5);
+            M.role = cur.getString(6);
         }
         cur.close();
         return M;

@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_loginFragment_to_elderHomeFragment"
             app:destination="@id/elderHomeFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_caregiverHomeFragment"
+            app:destination="@id/caregiverHomeFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"

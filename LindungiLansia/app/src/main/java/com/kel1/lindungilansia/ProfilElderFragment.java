@@ -76,7 +76,7 @@ public class ProfilElderFragment extends Fragment {
         View view = binding.getRoot();
         model = new CaregiverViewModel();
         binding.setLifecycleOwner(getViewLifecycleOwner());
-        binding.setCaregivermodel(model);
+        binding.setEldermodel(model);
 
         // Shared preferences
         SharedPreferences sp = getActivity().getSharedPreferences("com.kel1.lindungilansia.sp", Context.MODE_PRIVATE);
@@ -90,9 +90,9 @@ public class ProfilElderFragment extends Fragment {
         TextView tvEmailProfilElder = view.findViewById(R.id.tvEmailProfilElder);
 
         // Ambil data user yang login dari database
+        int loginId = sp.getInt("id", 0);
         String loginEmail = sp.getString("email", "");
-        String loginPass = sp.getString("pass", "");
-        DbUser.User usr = dbuser.getUserLogin(loginEmail, loginPass);
+        DbUser.User usr = dbuser.getUser(loginId, loginEmail);
 
         // Ubah data viewmodel caregiver
         model.setNama(usr.nama);

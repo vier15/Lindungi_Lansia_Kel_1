@@ -1,8 +1,11 @@
 package com.kel1.lindungilansia;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
@@ -10,6 +13,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
+
+import com.kel1.lindungilansia.databinding.FragmentCaregiverHomeBinding;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -17,6 +23,9 @@ import android.widget.Button;
  * create an instance of this fragment.
  */
 public class CaregiverHomeFragment extends Fragment {
+
+    private DbUser dbuser;
+    private CaregiverViewModel model;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -61,7 +70,31 @@ public class CaregiverHomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_caregiver_home, container, false);
+
+        // Data binding
+        FragmentCaregiverHomeBinding binding = DataBindingUtil.inflate(inflater, R.layout.fragment_caregiver_home, container, false);
+        View view = binding.getRoot();
+        model = new CaregiverViewModel();
+        binding.setLifecycleOwner(getViewLifecycleOwner());
+        binding.setCaregivermodel(model);
+
+        // Shared preferences
+        SharedPreferences sp = getActivity().getSharedPreferences("com.kel1.lindungilansia.sp", Context.MODE_PRIVATE);
+
+        // Membuka database
+        dbuser = new DbUser(getActivity().getApplicationContext());
+        dbuser.open();
+
+        // Ambil text view
+        TextView tvCaregiverHomeName = view.findViewById(R.id.tvCaregiverHomeName);
+
+        // Ambil data user yang login dari database
+        int loginId = sp.getInt("id", 0);
+        String loginEmail = sp.getString("email", "");
+        DbUser.User usr = dbuser.getUser(loginId, loginEmail);
+
+        // Ubah data viewmodel caregiver
+        model.setNama(usr.nama);
 
         // Navigasi ke lihat profil elder
         ConstraintLayout clElderCaregiverHome1 = view.findViewById(R.id.clElderCaregiverHome1);

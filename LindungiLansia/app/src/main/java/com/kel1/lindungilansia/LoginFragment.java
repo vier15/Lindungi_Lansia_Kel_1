@@ -7,7 +7,6 @@ import android.os.Bundle;
 //import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
-import androidx.lifecycle.ViewModelProvider;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -118,13 +117,20 @@ public class LoginFragment extends Fragment {
                     // jika validasi berhasil
                     if(usr.nama != null){
                         // simpan data user di shared preferences
-
+                        editor.putInt("id", usr.id);
                         editor.putString("email", usr.email);
-                        editor.putString("pass", usr.password);
+//                        editor.putString("pass", usr.password);
+                        editor.putString("role", usr.role);
                         editor.commit();
 
-                        // pindah ke halaman home
-                        Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_elderHomeFragment);
+                        if(usr.role.equals("Caregiver")){
+                            // Jika role user Caregiver, pidah ke halaman home caregiver
+                            Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_caregiverHomeFragment);
+                        }
+                        else if(usr.role.equals("Elder")){
+                            // Jika tidak, indah ke halaman home elder
+                            Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_elderHomeFragment);
+                        }
                     }
                     // jika validasi gagal
                     else{
