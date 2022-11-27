@@ -24,7 +24,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/alert_Atribut"
+        android:id="@+id/alert_nama_Atribut"
         android:layout_width="275dp"
         android:layout_height="58dp"
         android:fontFamily="@font/sen"

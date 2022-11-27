@@ -1,44 +1,103 @@
 package com.kel1.lindungilansia;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
-    private DbUser dbUser;
+    private EditText etEmailLogin,etPassLogin;
+    private Button btnDaftarLogin,btnMasukLogin;
+    private FirebaseAuth mAuth;
+    private ProgressDialog progressDialog;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        getSupportActionBar().hide();
-        dbUser = new DbUser(getApplicationContext());
-        dbUser.open();
+        setContentView(R.layout.fragment_login);
 
-        DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
-        drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
 
-        NavigationView navigationView = findViewById(R.id.nvElderHomeSidebar);
-        navigationView.setItemIconTintList(null);
-//
-//        NavController navController = Navigation.findNavController(this, R.id.navhost_main);
-//        NavigationUI.setupWithNavController(navigationView, navController);
+        mAuth = FirebaseAuth.getInstance();
+        etEmailLogin = findViewById(R.id.etEmailLogin);
+        etPassLogin = findViewById(R.id.etPassLogin);
+        btnDaftarLogin = findViewById(R.id.btnDaftarLogin);
+        btnMasukLogin = findViewById(R.id.btnMasukLogin);
+        progressDialog = new ProgressDialog(LoginActivity.this);
+        progressDialog.setTitle("Loading");
+        progressDialog.setMessage("Silahkan tunggu!");
+        progressDialog.setCancelable(false);
+
+        btnDaftarLogin.setOnClickListener(v->{
+            startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
+        });
+
+        btnMasukLogin.setOnClickListener(v->{
+           if(etEmailLogin.getText().length()>0 && etPassLogin.getText().length()>0){
+                login(etEmailLogin.getText().toString(), etPassLogin.getText().toString());
+           }
+           else{
+               Toast.makeText(getApplicationContext(), "Lengkapi semua data!", Toast.LENGTH_SHORT).show();
+           }
+        });
     }
 
+
+    private void login(String email, String password){
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful() && task.getResult()!=null){
+                    if(task.getResult().getUser()!=null){
+                        reload();
+                    }
+                    else{
+                        Toast.makeText(getApplicationContext(), "Login Gagal", Toast.LENGTH_SHORT).show();
+                    }
+                }else {
+                    Toast.makeText(getApplicationContext(), "Login Gagal", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
     @Override
     protected void onDestroy() {
-        dbUser.close();
+
         super.onDestroy();
     }
 
+
+    private void reload(){
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null){
+            reload();
+        }
+    }
 
 }
