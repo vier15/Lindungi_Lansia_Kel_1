@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "403117711191",
+    "project_id": "lindungilansia",
+    "storage_bucket": "lindungilansia.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:403117711191:android:26d7978023d80de46c6812",
+        "android_client_info": {
+          "package_name": "com.kel1.lindungilansia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "403117711191-2dja19pqtv6lq2h5ciesl2h47dkg1c9v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kel1.lindungilansia",
+            "certificate_hash": "d75ea48dfbd5ac9f3de182dc8230146386c77dbf"
+          }
+        },
+        {
+          "client_id": "403117711191-h9s19qp0vfv230mo1sb5ecv50jntok19.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA13cZPTxWbf4vSzmF1BGSDiKcptWr3wng"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "403117711191-h9s19qp0vfv230mo1sb5ecv50jntok19.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
