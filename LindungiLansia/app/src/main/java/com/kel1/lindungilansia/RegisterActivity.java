@@ -26,14 +26,19 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class RegisterActivity extends AppCompatActivity {
 
 
     private EditText etNamaRegister, etEmailRegister,etPassRegister;
-    private Button btnDaftarRegister;
+    private Button btnDaftarRegister, btnBatalRegister;
     private FirebaseAuth mAuth;
+    private FirebaseFirestore db;
     private ProgressDialog progressDialog;
 
     @Override
@@ -42,13 +47,15 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.fragment_register);
 
         mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
         etNamaRegister = findViewById(R.id.etNamaRegister);
         etEmailRegister = findViewById(R.id.etEmailRegister);
         etPassRegister = findViewById(R.id.etPassRegister);
         btnDaftarRegister = findViewById(R.id.btnDaftarRegister);
+        btnBatalRegister = findViewById(R.id.btnBatalRegister);
         progressDialog = new ProgressDialog(RegisterActivity.this);
         progressDialog.setTitle("Loading");
-        progressDialog.setMessage("Silahkan tunggu!");
+        progressDialog.setMessage("Silahkan tunggu");
         progressDialog.setCancelable(false);
 
         btnDaftarRegister.setOnClickListener(v->{
@@ -56,8 +63,12 @@ public class RegisterActivity extends AppCompatActivity {
                 register(etNamaRegister.getText().toString(),etEmailRegister.getText().toString(), etPassRegister.getText().toString());
             }
             else{
-                Toast.makeText(getApplicationContext(), "Lengkapi semua data!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Data belum lengkap", Toast.LENGTH_SHORT).show();
             }
+        });
+
+        btnBatalRegister.setOnClickListener(v -> {
+            finish();
         });
     }
 
@@ -77,28 +88,31 @@ public class RegisterActivity extends AppCompatActivity {
                                         .setDisplayName(nama)
                                         .build();
 
+                                Map<String, Object> userData = new HashMap<>();
+                                userData.put("nama", nama);
+                                userData.put("email", email);
+                                db.collection("users").document(user.getUid()).set(userData);
+
                                 Log.d(TAG, "createUserWithEmail:success");
+                                // Jika berhasil request update, pindah ke halaman role register
                                 user.updateProfile(request).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
-                                        reload();
+                                        startActivity(new Intent(getApplicationContext(), RoleRegisterActivity.class));
                                     }
                                 });
-
                             }
                             else{
                                 Toast.makeText(getApplicationContext(), "Register Gagal!",
                                         Toast.LENGTH_SHORT).show();
                             }
-
-
-
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
                             Toast.makeText(getApplicationContext(), "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                         }
+                        progressDialog.dismiss();
                     }
                 });
     }
@@ -116,7 +130,7 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
+        // Cek jika sudah ada user yang login, langsung masuk ke halaman utama
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
             reload();

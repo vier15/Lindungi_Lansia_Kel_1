@@ -140,7 +140,7 @@
         android:drawableStart="@drawable/ic_round_mail_outline_24"
         android:elevation="1dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="textEmailAddress"
         android:padding="10dp"
         android:textColor="@color/jet_black"
         android:translationZ="4dp"

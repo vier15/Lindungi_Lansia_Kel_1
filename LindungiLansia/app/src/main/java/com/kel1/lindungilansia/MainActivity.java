@@ -21,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
-        dbUser = new DbUser(getApplicationContext());
-        dbUser.open();
+//        dbUser = new DbUser(getApplicationContext());
+//        dbUser.open();
 
         DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
         drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        dbUser.close();
+//        dbUser.close();
         super.onDestroy();
     }
 

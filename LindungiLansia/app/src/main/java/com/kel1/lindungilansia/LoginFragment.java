@@ -16,6 +16,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link LoginFragment#newInstance} factory method to
@@ -24,6 +28,8 @@ import android.widget.Toast;
 public class LoginFragment extends Fragment {
 
     private DbUser dbuser;
+    private FirebaseUser firebaseUser;
+    private FirebaseFirestore db;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -70,6 +76,10 @@ public class LoginFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_login, container, false);
 
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+
+//        db.collection("users")
+
         // Buat shared preferences
         SharedPreferences sp = getActivity().getSharedPreferences("com.kel1.lindungilansia.sp", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
@@ -82,6 +92,15 @@ public class LoginFragment extends Fragment {
 //        model = new ViewModelProvider(this).get(UserViewModel.class);
 //        binding.getLifecycle();
 //        binding.setViewmodel(model);
+
+        Button btnLogoutCek = view.findViewById(R.id.btnLogoutCek);
+        btnLogoutCek.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                getActivity().finish();
+            }
+        });
 
 
         Button btnDaftarLogin = view.findViewById(R.id.btnDaftarLogin);

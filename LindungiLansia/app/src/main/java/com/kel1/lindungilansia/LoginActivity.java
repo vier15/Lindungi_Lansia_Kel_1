@@ -44,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
         btnMasukLogin = findViewById(R.id.btnMasukLogin);
         progressDialog = new ProgressDialog(LoginActivity.this);
         progressDialog.setTitle("Loading");
-        progressDialog.setMessage("Silahkan tunggu!");
+        progressDialog.setMessage("Silahkan tunggu");
         progressDialog.setCancelable(false);
 
         btnDaftarLogin.setOnClickListener(v->{
@@ -56,13 +56,14 @@ public class LoginActivity extends AppCompatActivity {
                 login(etEmailLogin.getText().toString(), etPassLogin.getText().toString());
            }
            else{
-               Toast.makeText(getApplicationContext(), "Lengkapi semua data!", Toast.LENGTH_SHORT).show();
+               Toast.makeText(getApplicationContext(), "Data belum lengkap", Toast.LENGTH_SHORT).show();
            }
         });
     }
 
 
     private void login(String email, String password){
+        progressDialog.show();
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -76,15 +77,15 @@ public class LoginActivity extends AppCompatActivity {
                 }else {
                     Toast.makeText(getApplicationContext(), "Login Gagal", Toast.LENGTH_SHORT).show();
                 }
+                progressDialog.dismiss();
             }
         });
     }
+
     @Override
     protected void onDestroy() {
-
         super.onDestroy();
     }
-
 
     private void reload(){
         startActivity(new Intent(getApplicationContext(), MainActivity.class));
@@ -93,7 +94,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
+        // Cek jika sudah ada user yang login, langsung masuk ke halaman utama
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
             reload();
