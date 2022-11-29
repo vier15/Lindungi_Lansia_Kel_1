@@ -93,14 +93,14 @@ public class LoginFragment extends Fragment {
 //        binding.getLifecycle();
 //        binding.setViewmodel(model);
 
-        Button btnLogoutCek = view.findViewById(R.id.btnLogoutCek);
-        btnLogoutCek.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                getActivity().finish();
-            }
-        });
+//        Button btnLogoutCek = view.findViewById(R.id.btnLogoutCek);
+//        btnLogoutCek.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                FirebaseAuth.getInstance().signOut();
+//                getActivity().finish();
+//            }
+//        });
 
 
         Button btnDaftarLogin = view.findViewById(R.id.btnDaftarLogin);

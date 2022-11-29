@@ -17,6 +17,10 @@ import android.widget.Button;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link ElderHomeFragment#newInstance} factory method to
@@ -72,22 +76,32 @@ public class ElderHomeFragment extends Fragment {
         DrawerLayout drawerLayout = getActivity().findViewById(R.id.drawerLayout);
 
         // Navigasi ke navbar
-        FloatingActionButton btnNavBar = view.findViewById(R.id.btnNavBar);
-        btnNavBar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                drawerLayout.openDrawer(GravityCompat.START);
-            }
-        });
-
-        // Navigasi ke navbar
 //        FloatingActionButton btnNavBar = view.findViewById(R.id.btnNavBar);
 //        btnNavBar.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
-//                Navigation.findNavController(view).navigate(R.id.action_elderHomeFragment_to_navBarFragment);
+//                drawerLayout.openDrawer(GravityCompat.START);
 //            }
 //        });
+
+        // Logout
+        Button btnLogout = view.findViewById(R.id.btnLogoutCheck);
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                getActivity().finish();
+            }
+        });
+
+        // Navigasi ke navbar
+        FloatingActionButton btnNavBar = view.findViewById(R.id.btnNavBar);
+        btnNavBar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_elderHomeFragment_to_navBarFragment);
+            }
+        });
 
         // Navigasi butuh bantuan
         Button btnElderHomeButuhBantuan = view.findViewById(R.id.btnElderHomeButuhBantuan);
