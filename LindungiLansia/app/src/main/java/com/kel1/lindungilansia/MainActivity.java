@@ -8,14 +8,18 @@ import androidx.navigation.ui.NavigationUI;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
     private DbUser dbUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         NavigationView navigationView = findViewById(R.id.nvElderHomeSidebar);
         navigationView.setItemIconTintList(null);
-//
+
 //        NavController navController = Navigation.findNavController(this, R.id.navhost_main);
 //        NavigationUI.setupWithNavController(navigationView, navController);
     }
