@@ -45,6 +45,7 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_register);
+        getSupportActionBar().hide();
 
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();

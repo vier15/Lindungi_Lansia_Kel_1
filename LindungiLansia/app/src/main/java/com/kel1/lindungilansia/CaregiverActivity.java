@@ -36,6 +36,7 @@ public class CaregiverActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
 //        setContentView(R.layout.fragment_caregiver_home);
 
         // Setup databinding
@@ -43,6 +44,10 @@ public class CaregiverActivity extends AppCompatActivity {
         model = new CaregiverViewModel();
         binding.setLifecycleOwner(this);
         binding.setCaregivermodel(model);
+
+        setContentView(R.layout.fragment_caregiver_home);
+        getSupportActionBar().hide();
+
 
         // Inisialisasi firebase authentication
         mAuth = FirebaseAuth.getInstance();

@@ -45,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_login);
-
+        getSupportActionBar().hide();
 
         mAuth = FirebaseAuth.getInstance();
         etEmailLogin = findViewById(R.id.etEmailLogin);

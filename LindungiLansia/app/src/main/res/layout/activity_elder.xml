@@ -6,4 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".ElderActivity">
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView2"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/nav_caregiver" />
+
+    <TextView
+        android:id="@+id/tvHasil"
+        android:layout_width="231dp"
+        android:layout_height="86dp"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="@+id/fragmentContainerView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fragmentContainerView2"
+        app:layout_constraintVertical_bias="0.886" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

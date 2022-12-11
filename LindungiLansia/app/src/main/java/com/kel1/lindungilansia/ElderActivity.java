@@ -28,7 +28,8 @@ public class ElderActivity extends AppCompatActivity implements SensorEventListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_elder_home);
+        setContentView(R.layout.activity_elder);
+        getSupportActionBar().hide();
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -49,12 +50,12 @@ public class ElderActivity extends AppCompatActivity implements SensorEventListe
 
 
         // Logout
-        Button btnLogoutCheck = findViewById(R.id.btnElderHomeLogout);
-        btnLogoutCheck.setOnClickListener(view -> {
-            mAuth.signOut();
-            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-            finish();
-        });
+//        Button btnLogoutCheck = findViewById(R.id.btnElderHomeLogout);
+//        btnLogoutCheck.setOnClickListener(view -> {
+//            mAuth.signOut();
+//            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+//            finish();
+//        });
     }
 
     public void onSensorChanged(SensorEvent sensorEvent) {
@@ -76,6 +77,7 @@ public class ElderActivity extends AppCompatActivity implements SensorEventListe
             // Menampilkan log dari accelerometer beserta timestamp
             String msg = "X: " + ax + ", Y: " + ay + ", Z: " + az + ", Timestamp: " + timestamp;
             Log.d("debug_kel1", msg);
+
             tvHasil.setText(msg);
         }
 
