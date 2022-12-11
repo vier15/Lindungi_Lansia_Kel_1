@@ -1,6 +1,10 @@
 package com.kel1.lindungilansia;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.NavigationUI;
 
 import android.content.Intent;
 import android.hardware.Sensor;
@@ -9,9 +13,11 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -31,9 +37,14 @@ public class ElderActivity extends AppCompatActivity implements SensorEventListe
         setContentView(R.layout.activity_elder);
         getSupportActionBar().hide();
 
+//        NavHostFragment navHostFragment =
+//                (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_elder);
+//        NavController navController = navHostFragment.getNavController();
+
+
         mAuth = FirebaseAuth.getInstance();
 
-        String TAG = "debug_accel_linlun";
+        String TAG = "debug_kel1";
 
         tvHasil = findViewById(R.id.tvHasil);
 
@@ -71,7 +82,10 @@ public class ElderActivity extends AppCompatActivity implements SensorEventListe
             isTabrakan = true;
         }
         if (isTabrakan) {
-            tvHasil.setText("Terjadi Tabrakan!");
+//            tvHasil.setText("Terjadi Tabrakan!");
+            Navigation.findNavController(this, R.id.fcvElder).navigate(R.id.action_elderHomeFragment_to_meminta_BantuanFragment);
+
+
         } else{
             long timestamp = System.currentTimeMillis();
             // Menampilkan log dari accelerometer beserta timestamp
