@@ -20,9 +20,9 @@ public class ElderActivity extends AppCompatActivity implements SensorEventListe
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+    // Sensor
     private SensorManager sm;
     private Sensor senAccel;
-
     private TextView tvHasil;
 
     @Override
@@ -75,7 +75,7 @@ public class ElderActivity extends AppCompatActivity implements SensorEventListe
             long timestamp = System.currentTimeMillis();
             // Menampilkan log dari accelerometer beserta timestamp
             String msg = "X: " + ax + ", Y: " + ay + ", Z: " + az + ", Timestamp: " + timestamp;
-            Log.d("debug_yudi", msg);
+            Log.d("debug_kel1", msg);
             tvHasil.setText(msg);
         }
 
