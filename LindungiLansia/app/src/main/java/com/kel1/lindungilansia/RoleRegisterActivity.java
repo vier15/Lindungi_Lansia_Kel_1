@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -14,6 +15,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -76,7 +79,34 @@ public class RoleRegisterActivity extends AppCompatActivity {
     }
 
     private void reload(){
-        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        // Ambil role user
+        db = FirebaseFirestore.getInstance();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        db.collection("users").whereEqualTo("email", currentUser.getEmail())
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        // Jika proses ambil data berhasil
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                // Simpan data user ke hashmap
+                                Map<String,Object> data = document.getData();
+                                String role = data.get("role").toString();
+
+                                // Jika role user = Elder
+                                if(role.equals("Elder")){
+                                    startActivity(new Intent(getApplicationContext(), ElderActivity.class));
+                                }
+                                else{
+                                    startActivity(new Intent(getApplicationContext(), CaregiverActivity.class));
+                                }
+                            }
+                        } else {
+                            Log.w("debug_kel1", "Error getting documents.", task.getException());
+                        }
+                    }
+                });
     }
 
 }

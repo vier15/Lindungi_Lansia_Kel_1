@@ -19,7 +19,7 @@
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".CaregiverHomeFragment">
+        tools:context=".CaregiverActivity">
 
         <ImageView
             android:id="@+id/ivCaregiverHomeProfile"
@@ -255,6 +255,17 @@
             app:layout_constraintHorizontal_bias="0.949"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnCaregiverHomeLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Logout"
+            app:layout_constraintEnd_toEndOf="@+id/btnCaregiverHomeDemoNotifElder"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/btnCaregiverHomeDemoNotifElder"
+            app:layout_constraintTop_toBottomOf="@+id/btnCaregiverHomeDemoNotifElder" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

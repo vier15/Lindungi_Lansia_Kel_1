@@ -93,7 +93,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 userData.put("email", email);
                                 db.collection("users").document(user.getUid()).set(userData);
 
-                                Log.d(TAG, "createUserWithEmail:success");
+//                                Log.d(TAG, "createUserWithEmail:success");
                                 // Jika berhasil request update, pindah ke halaman role register
                                 user.updateProfile(request).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
