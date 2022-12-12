@@ -67,54 +67,54 @@ public class RoleRegisterFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_role_register, container, false);
 
-        // Membuka database
-        dbuser = new DbUser(getActivity().getApplicationContext());
-        dbuser.open();
-
-        // Membuka shared preferences
-        SharedPreferences sp = getActivity().getSharedPreferences("com.kel1.lindungilansia.sp", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sp.edit();
-
-        // Navigasi ke halaman elder home
-        ImageButton imgBtnElderRegister = view.findViewById(R.id.imgBtnElderRegister);
-        imgBtnElderRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Update role akun yang baru mendaftar menjadi Elder
-                int id = sp.getInt("id", 0);
-                String email = sp.getString("email", "");
-                dbuser.updateRoleUser("Elder", id, email);
-
-                // Simpan role user di shared preferences
-                editor.putString("role", "Elder");
-
-                Navigation.findNavController(view).navigate(R.id.action_roleRegisterFragment_to_elderHomeFragment);
-            }
-        });
-
-        // Navigasi ke halaman caregiver home
-        ImageButton imgBtnCaregiverRegister = view.findViewById(R.id.imgBtnCaregiverRegister);
-        imgBtnCaregiverRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Update role akun yang baru mendaftar menjadi Caregiver
-                int id = sp.getInt("id", 0);
-                String email = sp.getString("email", "");
-                dbuser.updateRoleUser("Caregiver", id, email);
-
-                // Simpan role user di shared preferences
-                editor.putString("role", "Caregiver");
-
-                Navigation.findNavController(view).navigate(R.id.action_roleRegisterFragment_to_caregiverHomeFragment);
-            }
-        });
+//        // Membuka database
+//        dbuser = new DbUser(getActivity().getApplicationContext());
+//        dbuser.open();
+//
+//        // Membuka shared preferences
+//        SharedPreferences sp = getActivity().getSharedPreferences("com.kel1.lindungilansia.sp", Context.MODE_PRIVATE);
+//        SharedPreferences.Editor editor = sp.edit();
+//
+//        // Navigasi ke halaman elder home
+//        ImageButton imgBtnElderRegister = view.findViewById(R.id.imgBtnElderRegister);
+//        imgBtnElderRegister.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                // Update role akun yang baru mendaftar menjadi Elder
+//                int id = sp.getInt("id", 0);
+//                String email = sp.getString("email", "");
+//                dbuser.updateRoleUser("Elder", id, email);
+//
+//                // Simpan role user di shared preferences
+//                editor.putString("role", "Elder");
+//
+//                Navigation.findNavController(view).navigate(R.id.action_roleRegisterFragment_to_elderHomeFragment);
+//            }
+//        });
+//
+//        // Navigasi ke halaman caregiver home
+//        ImageButton imgBtnCaregiverRegister = view.findViewById(R.id.imgBtnCaregiverRegister);
+//        imgBtnCaregiverRegister.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                // Update role akun yang baru mendaftar menjadi Caregiver
+//                int id = sp.getInt("id", 0);
+//                String email = sp.getString("email", "");
+//                dbuser.updateRoleUser("Caregiver", id, email);
+//
+//                // Simpan role user di shared preferences
+//                editor.putString("role", "Caregiver");
+//
+//                Navigation.findNavController(view).navigate(R.id.action_roleRegisterFragment_to_caregiverHomeFragment);
+//            }
+//        });
 
         return view;
     }
 
-    @Override
-    public void onDestroy(){
-        dbuser.close();
-        super.onDestroy();
-    }
+//    @Override
+//    public void onDestroy(){
+//        dbuser.close();
+//        super.onDestroy();
+//    }
 }

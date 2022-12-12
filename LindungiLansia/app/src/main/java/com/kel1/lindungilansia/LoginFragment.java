@@ -81,12 +81,12 @@ public class LoginFragment extends Fragment {
 //        db.collection("users")
 
         // Buat shared preferences
-        SharedPreferences sp = getActivity().getSharedPreferences("com.kel1.lindungilansia.sp", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sp.edit();
-
-        // Membuka database
-        dbuser = new DbUser(getActivity().getApplicationContext());
-        dbuser.open();
+//        SharedPreferences sp = getActivity().getSharedPreferences("com.kel1.lindungilansia.sp", Context.MODE_PRIVATE);
+//        SharedPreferences.Editor editor = sp.edit();
+//
+//        // Membuka database
+//        dbuser = new DbUser(getActivity().getApplicationContext());
+//        dbuser.open();
 
 //        Login binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false);
 //        model = new ViewModelProvider(this).get(UserViewModel.class);
@@ -103,68 +103,68 @@ public class LoginFragment extends Fragment {
 //        });
 
 
-        Button btnDaftarLogin = view.findViewById(R.id.btnDaftarLogin);
-        btnDaftarLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_registerFragment);
-            }
-        });
-
-        Button btnMasukLogin = view.findViewById(R.id.btnMasukLogin);
-        btnMasukLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                EditText etEmailLogin = view.findViewById(R.id.etEmailLogin);
-                EditText etPassLogin = view.findViewById(R.id.etPassLogin);
-
-                // Validasi jika ada field text yang belum diisi
-                if (etEmailLogin.getText().toString().length() == 0){
-                    etEmailLogin.setError("Email masih kosong");
-                }
-                else if ((etPassLogin.getText().toString().length() == 0)){
-                    etPassLogin.setError("Password masih kosong");
-                }
-                else {
-                    // Mengambil data email
-                    String loginEmail = etEmailLogin.getText().toString();
-                    String loginPass = etPassLogin.getText().toString();
-
-                    // Ambil data login dari database
-                    DbUser.User usr = dbuser.getUserLogin(loginEmail, loginPass);
-
-                    // jika validasi berhasil
-                    if(usr.nama != null){
-                        // simpan data user di shared preferences
-                        editor.putInt("id", usr.id);
-                        editor.putString("email", usr.email);
-//                        editor.putString("pass", usr.password);
-                        editor.putString("role", usr.role);
-                        editor.commit();
-
-                        if(usr.role.equals("Caregiver")){
-                            // Jika role user Caregiver, pidah ke halaman home caregiver
-                            Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_caregiverHomeFragment);
-                        }
-                        else if(usr.role.equals("Elder")){
-                            // Jika tidak, indah ke halaman home elder
-                            Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_elderHomeFragment);
-                        }
-                    }
-                    // jika validasi gagal
-                    else{
-                        Toast.makeText(getActivity(), "Email atau password salah", Toast.LENGTH_SHORT).show();
-                    }
-                }
-            }
-        });
+//        Button btnDaftarLogin = view.findViewById(R.id.btnDaftarLogin);
+//        btnDaftarLogin.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_registerFragment);
+//            }
+//        });
+//
+//        Button btnMasukLogin = view.findViewById(R.id.btnMasukLogin);
+//        btnMasukLogin.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                EditText etEmailLogin = view.findViewById(R.id.etEmailLogin);
+//                EditText etPassLogin = view.findViewById(R.id.etPassLogin);
+//
+//                // Validasi jika ada field text yang belum diisi
+//                if (etEmailLogin.getText().toString().length() == 0){
+//                    etEmailLogin.setError("Email masih kosong");
+//                }
+//                else if ((etPassLogin.getText().toString().length() == 0)){
+//                    etPassLogin.setError("Password masih kosong");
+//                }
+//                else {
+//                    // Mengambil data email
+//                    String loginEmail = etEmailLogin.getText().toString();
+//                    String loginPass = etPassLogin.getText().toString();
+//
+//                    // Ambil data login dari database
+//                    DbUser.User usr = dbuser.getUserLogin(loginEmail, loginPass);
+//
+//                    // jika validasi berhasil
+//                    if(usr.nama != null){
+//                        // simpan data user di shared preferences
+//                        editor.putInt("id", usr.id);
+//                        editor.putString("email", usr.email);
+////                        editor.putString("pass", usr.password);
+//                        editor.putString("role", usr.role);
+//                        editor.commit();
+//
+//                        if(usr.role.equals("Caregiver")){
+//                            // Jika role user Caregiver, pidah ke halaman home caregiver
+//                            Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_caregiverHomeFragment);
+//                        }
+//                        else if(usr.role.equals("Elder")){
+//                            // Jika tidak, indah ke halaman home elder
+//                            Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_elderHomeFragment);
+//                        }
+//                    }
+//                    // jika validasi gagal
+//                    else{
+//                        Toast.makeText(getActivity(), "Email atau password salah", Toast.LENGTH_SHORT).show();
+//                    }
+//                }
+//            }
+//        });
 
         return view;
     }
 
-    @Override
-    public void onDestroy(){
-        dbuser.close();
-        super.onDestroy();
-    }
+//    @Override
+//    public void onDestroy(){
+//        dbuser.close();
+//        super.onDestroy();
+//    }
 }

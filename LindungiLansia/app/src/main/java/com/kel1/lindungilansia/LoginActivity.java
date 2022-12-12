@@ -116,9 +116,11 @@ public class LoginActivity extends AppCompatActivity {
                                 // Jika role user = Elder
                                 if(role.equals("Elder")){
                                     startActivity(new Intent(getApplicationContext(), ElderActivity.class));
+                                    finish();
                                 }
                                 else{
                                     startActivity(new Intent(getApplicationContext(), CaregiverActivity.class));
+                                    finish();
                                 }
                             }
                         } else {

@@ -59,7 +59,6 @@ public class ElderActivity extends AppCompatActivity implements SensorEventListe
             Log.d(TAG,"Tidak ada sensor accelerometer!");
         }
 
-
         // Logout
 //        Button btnLogoutCheck = findViewById(R.id.btnElderHomeLogout);
 //        btnLogoutCheck.setOnClickListener(view -> {

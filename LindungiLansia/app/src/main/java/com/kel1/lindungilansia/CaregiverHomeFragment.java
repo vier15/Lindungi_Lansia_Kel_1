@@ -1,21 +1,33 @@
 package com.kel1.lindungilansia;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.kel1.lindungilansia.databinding.FragmentCaregiverHomeBinding;
+
+import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -24,8 +36,11 @@ import com.kel1.lindungilansia.databinding.FragmentCaregiverHomeBinding;
  */
 public class CaregiverHomeFragment extends Fragment {
 
-    private DbUser dbuser;
+    private Map<String,Object> data;
+    private String nama;
     private CaregiverViewModel model;
+    private FirebaseAuth mAuth;
+    private FirebaseFirestore db;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -78,23 +93,30 @@ public class CaregiverHomeFragment extends Fragment {
         binding.setLifecycleOwner(getViewLifecycleOwner());
         binding.setCaregiver(model);
 
-        // Shared preferences
-        SharedPreferences sp = getActivity().getSharedPreferences("com.kel1.lindungilansia.sp", Context.MODE_PRIVATE);
+        // Inisialisasi firebase authentication
+        mAuth = FirebaseAuth.getInstance();
+        // Inisialisasi firestore
+        db = FirebaseFirestore.getInstance();
 
-        // Membuka database
-        dbuser = new DbUser(getActivity().getApplicationContext());
-        dbuser.open();
-
-        // Ambil text view
-        TextView tvCaregiverHomeName = view.findViewById(R.id.tvCaregiverHomeName);
-
-        // Ambil data user yang login dari database
-        int loginId = sp.getInt("id", 0);
-        String loginEmail = sp.getString("email", "");
-        DbUser.User usr = dbuser.getUser(loginId, loginEmail);
-
-        // Ubah data viewmodel caregiver
-        model.setNama(usr.nama);
+        // Ambil data dari firestore database
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        db.collection("users").whereEqualTo("email", currentUser.getEmail())
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                // Ambil data nama dan simpan di viewmodel
+                                data = document.getData();
+                                nama = data.get("nama").toString();
+                                model.setNama(nama);
+                            }
+                        } else {
+                            Log.w("debug_kel1", "Error getting documents.", task.getException());
+                        }
+                    }
+                });
 
         // Navigasi ke lihat profil elder
         ConstraintLayout clElderCaregiverHome1 = view.findViewById(R.id.clElderCaregiverHome1);
@@ -111,6 +133,17 @@ public class CaregiverHomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Navigation.findNavController(view).navigate(R.id.action_caregiverHomeFragment_to_notifikasidariElderFragment);
+            }
+        });
+
+        // Logout
+        Button btnCaregiverHomeLogout = view.findViewById(R.id.btnCaregiverHomeLogout);
+        btnCaregiverHomeLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mAuth.signOut();
+                getActivity().startActivity(new Intent(getActivity().getApplicationContext(), LoginActivity.class));
+                getActivity().finish();
             }
         });
 

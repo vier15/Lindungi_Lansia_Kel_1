@@ -1,5 +1,6 @@
 package com.kel1.lindungilansia;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -84,6 +85,7 @@ public class ElderHomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
+                getActivity().startActivity(new Intent(getActivity().getApplicationContext(), LoginActivity.class));
                 getActivity().finish();
             }
         });

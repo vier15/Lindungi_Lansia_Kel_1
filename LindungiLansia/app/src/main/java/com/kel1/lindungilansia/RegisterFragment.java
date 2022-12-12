@@ -67,67 +67,67 @@ public class RegisterFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_register, container, false);
 
-        // Membuka database
-        dbuser = new DbUser(getActivity().getApplicationContext());
-        dbuser.open();
-
-        // Membuka shared preferences
-        SharedPreferences sp = getActivity().getSharedPreferences("com.kel1.lindungilansia.sp", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sp.edit();
-
-        Button btnDaftarRegister = view.findViewById(R.id.btnDaftarRegister);
-        btnDaftarRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                TextView etNamaRegister = view.findViewById(R.id.etNamaRegister);
-                TextView etEmailRegister = view.findViewById(R.id.etEmailRegister);
-                TextView etPassRegister = view.findViewById(R.id.etPassRegister);
-
-                // Validasi text field yang masih kosong
-                if (etNamaRegister.getText().toString().length() == 0) {
-                    etNamaRegister.setError("Nama masih kosong");
-                }
-                else if (etEmailRegister.getText().toString().length() == 0) {
-                    etEmailRegister.setError("Email masih kosong");
-                }
-                else if (etPassRegister.getText().toString().length() == 0) {
-                    etPassRegister.setError("Password masih kosong");
-                }
-                else {
-                    // Simpan data ke database
-                    String nama = etNamaRegister.getText().toString();
-                    String email = etEmailRegister.getText().toString();
-                    String pass = etPassRegister.getText().toString();
-                    dbuser.insertUser(nama, "",email, pass, "", "");
-
-                    // Ambil data login dari database
-                    DbUser.User usr = dbuser.getUserLogin(email, pass);
-
-                    // simpan data user di shared preferences
-                    editor.putInt("id", usr.id);
-                    editor.putString("email", usr.email);
-//                    editor.putString("pass", usr.password);
-                    editor.commit();
-
-                    Navigation.findNavController(view).navigate(R.id.action_registerFragment_to_roleRegisterFragment);
-                }
-            }
-        });
-
-        Button btnBatalRegister = view.findViewById(R.id.btnBatalRegister);
-        btnBatalRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.action_registerFragment_to_loginFragment);
-            }
-        });
+//        // Membuka database
+//        dbuser = new DbUser(getActivity().getApplicationContext());
+//        dbuser.open();
+//
+//        // Membuka shared preferences
+//        SharedPreferences sp = getActivity().getSharedPreferences("com.kel1.lindungilansia.sp", Context.MODE_PRIVATE);
+//        SharedPreferences.Editor editor = sp.edit();
+//
+//        Button btnDaftarRegister = view.findViewById(R.id.btnDaftarRegister);
+//        btnDaftarRegister.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                TextView etNamaRegister = view.findViewById(R.id.etNamaRegister);
+//                TextView etEmailRegister = view.findViewById(R.id.etEmailRegister);
+//                TextView etPassRegister = view.findViewById(R.id.etPassRegister);
+//
+//                // Validasi text field yang masih kosong
+//                if (etNamaRegister.getText().toString().length() == 0) {
+//                    etNamaRegister.setError("Nama masih kosong");
+//                }
+//                else if (etEmailRegister.getText().toString().length() == 0) {
+//                    etEmailRegister.setError("Email masih kosong");
+//                }
+//                else if (etPassRegister.getText().toString().length() == 0) {
+//                    etPassRegister.setError("Password masih kosong");
+//                }
+//                else {
+//                    // Simpan data ke database
+//                    String nama = etNamaRegister.getText().toString();
+//                    String email = etEmailRegister.getText().toString();
+//                    String pass = etPassRegister.getText().toString();
+//                    dbuser.insertUser(nama, "",email, pass, "", "");
+//
+//                    // Ambil data login dari database
+//                    DbUser.User usr = dbuser.getUserLogin(email, pass);
+//
+//                    // simpan data user di shared preferences
+//                    editor.putInt("id", usr.id);
+//                    editor.putString("email", usr.email);
+////                    editor.putString("pass", usr.password);
+//                    editor.commit();
+//
+//                    Navigation.findNavController(view).navigate(R.id.action_registerFragment_to_roleRegisterFragment);
+//                }
+//            }
+//        });
+//
+//        Button btnBatalRegister = view.findViewById(R.id.btnBatalRegister);
+//        btnBatalRegister.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Navigation.findNavController(view).navigate(R.id.action_registerFragment_to_loginFragment);
+//            }
+//        });
 
         return view;
     }
 
-    @Override
-    public void onDestroy(){
-        dbuser.close();
-        super.onDestroy();
-    }
+//    @Override
+//    public void onDestroy(){
+//        dbuser.close();
+//        super.onDestroy();
+//    }
 }
