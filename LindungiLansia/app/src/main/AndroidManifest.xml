@@ -16,12 +16,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LindungiLansia"
         tools:targetApi="31">
+        <service
+            android:foregroundServiceType="location"
+            android:name=".ElderActivity">
+        </service>
+        <service
+            android:foregroundServiceType="location"
+            android:name=".CaregiverActivity">
+        </service>
+
+
         <activity
             android:name=".CaregiverActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
+
         </activity>
         <activity
             android:name=".ElderActivity"

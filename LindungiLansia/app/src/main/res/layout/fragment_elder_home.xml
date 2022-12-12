@@ -95,4 +95,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnElderHomeButuhBantuan" />
+
+    <Button
+        android:id="@+id/buttonloc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.892"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnElderHomeLogout"
+        app:layout_constraintVertical_bias="0.0"
+        android:onClick="ambilLoc"
+         />
 </androidx.constraintlayout.widget.ConstraintLayout>

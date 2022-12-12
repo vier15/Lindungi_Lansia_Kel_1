@@ -1,22 +1,31 @@
 package com.kel1.lindungilansia;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -30,16 +39,15 @@ public class ElderActivity extends AppCompatActivity implements SensorEventListe
     private SensorManager sm;
     private Sensor senAccel;
     private TextView tvHasil;
+    private FusedLocationProviderClient fusedLocationClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_elder);
         getSupportActionBar().hide();
-
-//        NavHostFragment navHostFragment =
-//                (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_elder);
-//        NavController navController = navHostFragment.getNavController();
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -66,6 +74,49 @@ public class ElderActivity extends AppCompatActivity implements SensorEventListe
 //            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
 //            finish();
 //        });
+        ActivityResultLauncher<String> requestPermissionLauncher =
+
+                registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
+                    if (isGranted) {
+                        // Permission diberikan
+                        Log.d("debug_yudi", "permission diberikan");
+                        // langsung ambil lokasi
+                        ambilLoc(null);
+                    } else {
+                        //berikan info ke user karena permission tidak diberikan maka fitur jadi tidak tersedia
+                        Log.d("debug_yudi", "permission TIDAK diberikan");
+                    }
+                });
+        requestPermissionLauncher.launch(
+                Manifest.permission.ACCESS_FINE_LOCATION
+        );
+    }
+
+    public void ambilLoc(View v){
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+
+        //cek permission
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            //belum dapat permission, launch request
+
+        } else {
+            //sudah dapat permission
+            fusedLocationClient.getLastLocation()
+                    .addOnSuccessListener(this, new OnSuccessListener<Location>() {
+                        @Override
+                        public void onSuccess(Location loc) {
+                            // ambil last known location.  bisa null
+                            if (loc != null) {
+                                String latitude = String.valueOf(loc.getLatitude());
+                                String longitude = String.valueOf(loc.getLongitude());
+                                Log.d("debug_yudi", latitude + " " + longitude );
+                            } else {
+                                Log.d("debug_yudi", "loc return NULL");
+                            }
+                        }
+                    });
+        }
+
     }
 
     public void onSensorChanged(SensorEvent sensorEvent) {
@@ -77,12 +128,12 @@ public class ElderActivity extends AppCompatActivity implements SensorEventListe
             ay=sensorEvent.values[1];
             az=sensorEvent.values[2];
         }
-        if  (az<=-8) {
+        if  (az<=-11) {
             isTabrakan = true;
         }
         if (isTabrakan) {
-//            tvHasil.setText("Terjadi Tabrakan!");
-            Navigation.findNavController(this, R.id.fcvElder).navigate(R.id.action_elderHomeFragment_to_meminta_BantuanFragment);
+            tvHasil.setText("Terjadi Tabrakan!");
+           // Navigation.findNavController(this, R.id.fcvElder).navigate(R.id.action_elderHomeFragment_to_meminta_BantuanFragment);
         } else{
             long timestamp = System.currentTimeMillis();
             // Menampilkan log dari accelerometer beserta timestamp
