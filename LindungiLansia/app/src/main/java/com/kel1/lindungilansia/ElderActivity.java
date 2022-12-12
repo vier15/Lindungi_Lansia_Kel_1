@@ -83,8 +83,6 @@ public class ElderActivity extends AppCompatActivity implements SensorEventListe
         if (isTabrakan) {
 //            tvHasil.setText("Terjadi Tabrakan!");
             Navigation.findNavController(this, R.id.fcvElder).navigate(R.id.action_elderHomeFragment_to_meminta_BantuanFragment);
-
-
         } else{
             long timestamp = System.currentTimeMillis();
             // Menampilkan log dari accelerometer beserta timestamp
