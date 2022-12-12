@@ -6,7 +6,7 @@
 
     <data>
         <variable
-            name="caregivermodel"
+            name="caregiver"
             type="com.kel1.lindungilansia.CaregiverViewModel" />
     </data>
 
@@ -36,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="@{caregivermodel.nama}"
+            android:text="@{caregiver.nama}"
             android:textColor="@color/primary_blue"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"

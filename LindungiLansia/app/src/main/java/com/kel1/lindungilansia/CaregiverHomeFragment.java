@@ -76,7 +76,7 @@ public class CaregiverHomeFragment extends Fragment {
         View view = binding.getRoot();
         model = new CaregiverViewModel();
         binding.setLifecycleOwner(getViewLifecycleOwner());
-        binding.setCaregivermodel(model);
+        binding.setCaregiver(model);
 
         // Shared preferences
         SharedPreferences sp = getActivity().getSharedPreferences("com.kel1.lindungilansia.sp", Context.MODE_PRIVATE);

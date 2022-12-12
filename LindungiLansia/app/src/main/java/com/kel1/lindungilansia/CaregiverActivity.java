@@ -3,6 +3,7 @@ package com.kel1.lindungilansia;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -28,7 +29,6 @@ public class CaregiverActivity extends AppCompatActivity {
 
     private Map<String,Object> data;
     private String nama;
-    private TextView tvNama;
     private CaregiverViewModel model;
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
@@ -36,25 +36,19 @@ public class CaregiverActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
 //        setContentView(R.layout.fragment_caregiver_home);
+        getSupportActionBar().hide();
 
         // Setup databinding
         FragmentCaregiverHomeBinding binding = DataBindingUtil.setContentView(this, R.layout.fragment_caregiver_home);
-        model = new CaregiverViewModel();
+        model = new ViewModelProvider(this).get(CaregiverViewModel.class);
         binding.setLifecycleOwner(this);
-        binding.setCaregivermodel(model);
-
-        setContentView(R.layout.fragment_caregiver_home);
-        getSupportActionBar().hide();
-
+        binding.setCaregiver(model);
 
         // Inisialisasi firebase authentication
         mAuth = FirebaseAuth.getInstance();
         // Inisialisasi firestore
         db = FirebaseFirestore.getInstance();
-
-//        tvNama = findViewById(R.id.tvCaregiverHomeName);
 
         FirebaseUser currentUser = mAuth.getCurrentUser();
         db.collection("users").whereEqualTo("email", currentUser.getEmail())
@@ -64,10 +58,10 @@ public class CaregiverActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
+                                // Ambil data nama dan simpan di viewmodel
                                 data = document.getData();
                                 nama = data.get("nama").toString();
-//                                tvNama.setText(nama);
-                                model.setNama("Nama manual tapi dari get");
+                                model.setNama(nama);
                             }
                         } else {
                             Log.w("debug_kel1", "Error getting documents.", task.getException());
