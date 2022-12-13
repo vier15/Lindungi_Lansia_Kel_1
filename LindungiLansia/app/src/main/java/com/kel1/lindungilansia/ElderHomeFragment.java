@@ -108,6 +108,7 @@ public class ElderHomeFragment extends Fragment {
             }
         });
 
+        // Demo maps
         Button Button_maps_demo = view.findViewById(R.id.Button_maps_demo);
         Button_maps_demo.setOnClickListener(new View.OnClickListener() {
             @Override

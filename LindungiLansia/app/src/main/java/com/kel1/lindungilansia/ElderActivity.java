@@ -10,7 +10,9 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -41,6 +43,9 @@ public class ElderActivity extends AppCompatActivity implements SensorEventListe
     private TextView tvHasil;
     private FusedLocationProviderClient fusedLocationClient;
 
+    // Shared Preferences
+    private SharedPreferences sp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -48,7 +53,6 @@ public class ElderActivity extends AppCompatActivity implements SensorEventListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_elder);
         getSupportActionBar().hide();
-
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -75,16 +79,15 @@ public class ElderActivity extends AppCompatActivity implements SensorEventListe
 //            finish();
 //        });
         ActivityResultLauncher<String> requestPermissionLauncher =
-
                 registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
                     if (isGranted) {
                         // Permission diberikan
-                        Log.d("debug_yudi", "permission diberikan");
+                        Log.d("debug_kel1_map", "permission diberikan");
                         // langsung ambil lokasi
                         ambilLoc(null);
                     } else {
                         //berikan info ke user karena permission tidak diberikan maka fitur jadi tidak tersedia
-                        Log.d("debug_yudi", "permission TIDAK diberikan");
+                        Log.d("debug_kel1_map", "permission TIDAK diberikan");
                     }
                 });
         requestPermissionLauncher.launch(
@@ -102,19 +105,29 @@ public class ElderActivity extends AppCompatActivity implements SensorEventListe
         } else {
             //sudah dapat permission
             fusedLocationClient.getLastLocation()
-                    .addOnSuccessListener(this, new OnSuccessListener<Location>() {
-                        @Override
-                        public void onSuccess(Location loc) {
-                            // ambil last known location.  bisa null
-                            if (loc != null) {
-                                String latitude = String.valueOf(loc.getLatitude());
-                                String longitude = String.valueOf(loc.getLongitude());
-                                Log.d("debug_yudi", latitude + " " + longitude );
-                            } else {
-                                Log.d("debug_yudi", "loc return NULL");
-                            }
+                .addOnSuccessListener(this, new OnSuccessListener<Location>() {
+                    @Override
+                    public void onSuccess(Location loc) {
+                        // ambil last known location.  bisa null
+                        if (loc != null) {
+                            float flLatitude = (float) loc.getLatitude();
+                            float flLongitude = (float) loc.getLongitude();
+                            String latitude = String.valueOf(loc.getLatitude());
+                            String longitude = String.valueOf(loc.getLongitude());
+                            Log.d("debug_kel1_map", latitude + " " + longitude );
+
+                            //
+                            sp = getSharedPreferences("com.kel1.lindungilansia.sp", Context.MODE_PRIVATE);
+                            SharedPreferences.Editor ed;
+                            ed = sp.edit();
+                            ed.putFloat("currLatitude", flLatitude);
+                            ed.putFloat("currLongitude", flLongitude);
+                            ed.commit();
+                        } else {
+                            Log.d("debug_kel1_map", "loc return NULL");
                         }
-                    });
+                    }
+                });
         }
 
     }

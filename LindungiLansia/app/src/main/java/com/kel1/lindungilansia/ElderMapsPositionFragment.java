@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +20,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class ElderMapsPositionFragment extends Fragment {
 
+    // Shared preferences
+    SharedPreferences sp;
+
     private OnMapReadyCallback callback = new OnMapReadyCallback() {
 
         /**
@@ -31,9 +36,13 @@ public class ElderMapsPositionFragment extends Fragment {
          */
         @Override
         public void onMapReady(GoogleMap googleMap) {
-            LatLng lokasi = new LatLng(-6.914744, 107.609810);
+            // Ambil nilai latitude dan longitude dari shared preferences
+            sp = getActivity().getSharedPreferences("com.kel1.lindungilansia.sp", Context.MODE_PRIVATE);
+            double currLat = sp.getFloat("currLatitude", 0);
+            double currLong = sp.getFloat("currLongitude", 0);
+            LatLng lokasi = new LatLng(currLat, currLong);
             googleMap.addMarker(new MarkerOptions().position(lokasi).title("Lokasi Terkini"));
-            googleMap.moveCamera(CameraUpdateFactory.newLatLng(lokasi));
+            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(lokasi, 10));
         }
     };
 
